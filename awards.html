@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awards & Recognition — Vastu Riyaz Nadaf</title>
+<meta name="description" content="Awards and recognition received by Riyaz Nadaf for excellence in Vastu Shastra consultancy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ── LEAD: 2-col split intro ────────────────────────── */
+.awd-lead { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--rule); }
+.awd-lead-text { background: var(--bg-warm); padding: clamp(56px,7vw,92px) 8% clamp(56px,7vw,92px) 5%; display: flex; flex-direction: column; justify-content: center; }
+.awd-lead-side { background: var(--dark2); padding: clamp(56px,7vw,92px) 5% clamp(56px,7vw,92px) 8%; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid rgba(139,105,20,.12); position: relative; overflow: hidden; }
+.awd-lead-side::before { content: ''; position: absolute; top: 50%; right: -60px; transform: translateY(-50%); width: 260px; height: 260px; border-radius: 50%; border: 1px solid rgba(139,105,20,.06); pointer-events: none; }
+.awd-lead-side::after { content: ''; position: absolute; top: 50%; right: -20px; transform: translateY(-50%); width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(139,105,20,.08); pointer-events: none; }
+.ald-stat { padding: 24px 0; border-bottom: 1px solid rgba(139,105,20,.09); position: relative; overflow: hidden; transition: padding-left .35s; }
+.ald-stat:last-child { border-bottom: none; }
+.ald-stat::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: rgba(139,105,20,.05); transition: width .4s; }
+.ald-stat:hover::before { width: 100%; }
+.ald-n { font-family: var(--cap); font-size: clamp(34px,5.5vw,54px); font-weight: 700; color: var(--g3); line-height: 1; display: block; transition: color .3s; }
+.ald-stat:hover .ald-n { color: var(--gp); text-shadow: 0 0 28px rgba(191,154,64,.2); }
+.ald-l { font-family: var(--cap); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(122,106,84,.6); margin-top: 6px; display: block; }
+
+/* ── GALLERY ────────────────────────────────────────── */
+.awd-gallery-sec { padding: clamp(56px,7vw,88px) 5%; background: var(--bg); }
+.awd-g-hd { max-width: 1200px; margin: 0 auto 44px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
+.awd-count { font-family: var(--cap); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); padding: 8px 16px; border: 1px solid var(--rule); }
+
+/* ── FEATURED AWARD ─────────────────────────────────── */
+.feat-awd { background: var(--dark); padding: clamp(64px,8vw,104px) 5%; position: relative; }
+.feat-awd .tag { color: rgba(139,105,20,.7); }
+.feat-awd .tag::before,.feat-awd .tag::after { background: rgba(139,105,20,.5); }
+.feat-awd .h-title { color: var(--gp); max-width: 700px; }
+.feat-awd .h-lead { color: rgba(122,106,84,.8); max-width: 640px; }
+.feat-awd-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 1px; background: rgba(139,105,20,.12); max-width: 1200px; margin: 52px auto 0; }
+.feat-img { aspect-ratio: 4/3; overflow: hidden; position: relative; cursor: pointer; }
+.feat-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .65s ease; }
+.feat-img:hover img { transform: scale(1.03); }
+.feat-img .g-ov { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 1; opacity: 0; transition: opacity .3s; }
+.feat-img:hover .g-ov { opacity: 1; }
+.feat-img .g-ico { width: 42px; height: 42px; border: 1px solid rgba(226,207,160,.55); display: flex; align-items: center; justify-content: center; color: var(--gp); font-size: 17px; }
+.feat-detail { background: #171007; padding: 52px 44px; display: flex; flex-direction: column; justify-content: center; position: relative; }
+.feat-detail::before { content: ''; position: absolute; left: 0; top: 12%; bottom: 12%; width: 2px; background: linear-gradient(to bottom, transparent, var(--g) 22%, var(--g3) 62%, transparent); opacity: .6; }
+.fd-tag { color: var(--g3); margin-bottom: 16px; }
+.fd-tag::before,.fd-tag::after { background: var(--g3); opacity: .7; }
+.fd-title { font-family: var(--serif); font-size: clamp(22px,2.4vw,32px); font-weight: 300; color: var(--gp); margin-bottom: 20px; line-height: 1.28; letter-spacing: -.01em; }
+.fd-title em { font-style: italic; color: var(--g3); }
+.fd-body { font-family: var(--serif); font-size: 15px; color: rgba(122,106,84,.82); line-height: 1.88; font-weight: 300; margin-bottom: 14px; }
+.fd-rule { width: 40px; height: 1px; background: var(--g); margin: 16px 0 20px; opacity: .42; }
+
+@media(max-width:900px) {
+  .awd-lead { grid-template-columns: 1fr; }
+  .awd-lead-side { border-left: none; border-top: 1px solid rgba(139,105,20,.12); }
+  .feat-awd-grid { grid-template-columns: 1fr; }
+  .feat-detail { padding: 36px 28px; }
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="logo-a">
+    <svg class="logo-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="gA" x1="20%" y1="15%" x2="80%" y2="85%"><stop offset="0%" stop-color="#D4A84B"/><stop offset="50%" stop-color="#8B6914"/><stop offset="100%" stop-color="#5C4A0A"/></linearGradient><linearGradient id="gB" x1="80%" y1="15%" x2="20%" y2="85%"><stop offset="0%" stop-color="#C4A040"/><stop offset="100%" stop-color="#7A5E10"/></linearGradient></defs>
+      <circle cx="60" cy="60" r="57" stroke="url(#gA)" stroke-width=".7"/>
+      <g transform="translate(60,60)">
+        <ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(45)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(90)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(135)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(180)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(225)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(270)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(315)"/>
+        <ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(45)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(90)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(135)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(180)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(225)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(270)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(315)"/>
+        <circle cx="0" cy="0" r="13" stroke="url(#gA)" stroke-width=".8" fill="rgba(139,105,20,.05)"/><path d="M0,-7 L5,0 L0,7 L-5,0 Z" stroke="url(#gA)" stroke-width=".6" fill="none"/><circle cx="0" cy="0" r="2.5" fill="url(#gA)"/>
+      </g>
+    </svg>
+    <div class="logo-words"><span class="logo-brand">VASTU</span><span class="logo-sub">RIYAZ NADAF</span><span class="logo-line">Where Ancient Wisdom meets Modern Living</span></div>
+  </a>
+  <ul class="nav-ul">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="awards.html" class="act">Awards</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="media.html">Media</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book Consultation</a>
+  <button id="mBtn" aria-label="Menu">☰</button>
+</nav>
+<div id="mMenu">
+  <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="awards.html">Awards</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="media.html">Media Coverage</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="contact.html" class="m-book">Book Consultation</a>
+</div>
+
+<!-- PAGE BANNER -->
+<div class="pg-banner">
+  <span class="pg-tag">Recognition &amp; Excellence</span>
+  <h1 class="pg-title">Awards &amp; <em>Achievements</em></h1>
+  <p class="pg-lead">Honored by leading organizations across India for outstanding contribution to Vastu Shastra practice over four remarkable decades.</p>
+  <div class="pg-rule"></div>
+</div>
+
+<!-- LEAD: 2-column split -->
+<section class="awd-lead">
+  <div class="awd-lead-text r">
+    <div class="tag">The Recognition</div>
+    <h2 class="h-title">Honored for <em>Four Decades</em><br>of Excellence</h2>
+    <p class="h-lead">Riyaz Nadaf has been recognized by leading organizations across India for outstanding contribution to Vastu Shastra practice. Each award reflects not just professional achievement, but the transformational impact on thousands of lives.</p>
+  </div>
+  <div class="awd-lead-side r d1">
+    <div class="ald-stat">
+      <span class="ald-n">15+</span>
+      <span class="ald-l">Awards &amp; Honours Received</span>
+    </div>
+    <div class="ald-stat">
+      <span class="ald-n">40+</span>
+      <span class="ald-l">Years of Recognized Excellence</span>
+    </div>
+    <div class="ald-stat">
+      <span class="ald-n">National</span>
+      <span class="ald-l">Level Distinction</span>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="awd-gallery-sec">
+  <div class="awd-g-hd r">
+    <div>
+      <div class="tag">All Awards</div>
+      <h2 class="h-title" style="margin-bottom:0">A Gallery of <em>Recognition</em></h2>
+    </div>
+    <span class="awd-count">15 Photographs</span>
+  </div>
+  <div id="awd-grid" class="g-grid g3c awd r d1"></div>
+</section>
+
+<!-- FEATURED -->
+<section class="feat-awd">
+  <div class="tag">Featured Recognition</div>
+  <h2 class="h-title">Business Titans Award —<br><em>Excellence in Vastu Shastra</em></h2>
+  <p class="h-lead">Among the most prestigious recognitions in Riyaz Nadaf's career — the Business Titans Award for Excellence in Vastu Shastra Consultancy, a landmark in a journey that began over four decades ago.</p>
+  <div class="feat-awd-grid r d1">
+    <div class="feat-img">
+      <img src="Awards/awards1.jpg" alt="Business Titans Award Ceremony" loading="lazy">
+      <div class="g-ov"><div class="g-ico">⤢</div></div>
+    </div>
+    <div class="feat-detail">
+      <div class="tag fd-tag">The Honour</div>
+      <h3 class="fd-title">Business Titans Award for <em>Vastu Excellence</em></h3>
+      <p class="fd-body">Awarded in recognition of outstanding contribution to the field of Vastu Shastra consultancy — a recognition of the deep impact that Riyaz Nadaf's work has had on thousands of lives across India and the world.</p>
+      <div class="fd-rule"></div>
+      <p class="fd-body">This award reflects not just professional excellence, but a lifetime of dedication to an ancient science — practiced with integrity, delivered with precision, and valued by all who have experienced it.</p>
+      <a href="contact.html" class="btn-pale" style="align-self:flex-start;margin-top:12px">Book a Consultation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-ban r">
+  <div>
+    <div class="tag">Transform Your Space</div>
+    <h2 class="cta-h2">Work with an <em>Award-Winning</em><br>Vastu Consultant</h2>
+    <p class="cta-body">Benefit from four decades of expertise and multiple national recognitions. Your harmonized space awaits.</p>
+  </div>
+  <div class="cta-acts">
+    <a href="contact.html" class="btn-gol">Book Your Consultation</a>
+    <a href="testimonials.html" class="cta-note">Read Client Testimonials →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div><div class="ft-brand-name">VASTU <span>RIYAZ NADAF</span></div><div class="ft-tagline">Where Ancient Wisdom meets Modern Living</div><p class="ft-desc">India's trusted Vastu Shastra consultant for over four decades.</p></div>
+    <div class="ft-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="awards.html">Awards</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="media.html">Media</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="ft-col"><h4>Services</h4><ul><li><a href="contact.html">Residential Vastu</a></li><li><a href="contact.html">Commercial Vastu</a></li><li><a href="contact.html">Energy Balancing</a></li><li><a href="contact.html">New Construction</a></li><li><a href="contact.html">Online Consultation</a></li><li><a href="contact.html">Industrial Vastu</a></li></ul></div>
+    <div class="ft-col"><h4>Connect</h4><ul><li><a href="https://vasturiyaznadaf.com">vasturiyaznadaf.com</a></li><li><a href="#">@vasturiyaznadaf</a></li><li><a href="contact.html">Book a Consultation</a></li></ul></div>
+  </div>
+  <div class="ft-bot"><span>© 2026 Vastu Riyaz Nadaf. All rights reserved.</span><span><a href="https://vasturiyaznadaf.com">vasturiyaznadaf.com</a></span></div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lb"><button id="lb-x">✕</button><button class="lb-btn" id="lb-p">‹</button><img id="lb-img" src="" alt=""><button class="lb-btn" id="lb-n">›</button><div id="lb-ct"></div></div>
+
+<script>
+var nb=document.getElementById('navbar');
+window.addEventListener('scroll',function(){nb.classList.toggle('scrolled',scrollY>40)},{passive:true});
+var mb=document.getElementById('mBtn'),mm=document.getElementById('mMenu');
+mb.addEventListener('click',function(){var o=mm.classList.toggle('on');mb.textContent=o?'✕':'☰';});
+mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('on');mb.textContent='☰';});});
+var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.r').forEach(function(el){ro.observe(el);});
+/* GALLERY */
+var imgs=[],cur=0;
+(function(){
+  var c=document.getElementById('awd-grid');
+  for(var i=1;i<=15;i++){
+    var src='Awards/awards'+i+'.jpg';
+    imgs.push(src);
+    var d=document.createElement('div');
+    d.className='g-item';
+    d.dataset.i=i-1;
+    d.innerHTML='<img src="'+src+'" alt="" loading="lazy"><div class="g-ov"><div class="g-ico">⤢</div></div>';
+    d.addEventListener('click',function(){openLB(+this.dataset.i);});
+    c.appendChild(d);
+  }
+  // also wire featured images
+  document.querySelectorAll('.feat-img').forEach(function(fi){
+    fi.addEventListener('click',function(){openLB(0);});
+  });
+})();
+function openLB(i){cur=i;document.getElementById('lb-img').src=imgs[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+imgs.length;document.getElementById('lb').classList.add('on');document.body.style.overflow='hidden';}
+function closeLB(){document.getElementById('lb').classList.remove('on');document.body.style.overflow='';}
+document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLB();});
+document.getElementById('lb-x').addEventListener('click',closeLB);
+document.getElementById('lb-p').addEventListener('click',function(){cur=(cur-1+imgs.length)%imgs.length;document.getElementById('lb-img').src=imgs[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+imgs.length;});
+document.getElementById('lb-n').addEventListener('click',function(){cur=(cur+1)%imgs.length;document.getElementById('lb-img').src=imgs[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+imgs.length;});
+document.addEventListener('keydown',function(e){if(!document.getElementById('lb').classList.contains('on'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'){cur=(cur-1+imgs.length)%imgs.length;document.getElementById('lb-img').src=imgs[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+imgs.length;}if(e.key==='ArrowRight'){cur=(cur+1)%imgs.length;document.getElementById('lb-img').src=imgs[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+imgs.length;}});
+</script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Riyaz Nadaf — Vastu Riyaz Nadaf</title>
+<meta name="description" content="Learn about Riyaz Nadaf, India's trusted Vastu Shastra consultant with 40+ years of experience transforming homes and lives.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ── ABOUT SECTION ─────────────────────────────────────── */
+.about-main {
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: 0; background: var(--bg-warm);
+}
+.about-photo-col {
+  position: relative; background: var(--dark2);
+  min-height: 700px; overflow: hidden;
+}
+.about-photo-col img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  transition: transform .75s ease;
+}
+.about-photo-col:hover img { transform: scale(1.025); }
+.about-photo-decor {
+  position: absolute; top: 40px; right: 0; z-index: 2;
+  width: 3px; height: 140px; background: var(--g);
+}
+.about-photo-quote {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+  background: rgba(16,9,2,.92); padding: 32px;
+  border-top: 1px solid rgba(139,105,20,.18);
+  backdrop-filter: blur(6px);
+}
+.apq-mark { font-family: var(--serif); font-size: 44px; color: var(--g); line-height: .8; margin-bottom: 8px; }
+.apq-text { font-family: var(--serif); font-size: 15px; font-style: italic; color: rgba(226,207,160,.82); line-height: 1.7; margin-bottom: 12px; }
+.apq-cite { font-family: var(--cap); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--g3); }
+
+.about-body {
+  padding: clamp(64px,8vw,100px) 8% clamp(64px,8vw,100px) 5%;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.about-intro {
+  font-family: var(--serif); font-size: 19px; font-weight: 300;
+  line-height: 1.85; color: var(--brown); margin-bottom: 28px;
+  padding-bottom: 28px; border-bottom: 1px solid var(--rule);
+}
+.about-intro em { font-style: italic; color: var(--g2); }
+.about-paras p {
+  font-family: var(--serif); font-size: 16px; font-weight: 300;
+  line-height: 1.9; color: var(--muted); margin-bottom: 20px;
+}
+.about-highlights {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--rule);
+  margin: 32px 0;
+}
+.ah-item {
+  background: var(--bg-warm); padding: 20px 22px;
+  transition: background .35s, border-top-color .35s;
+  border-top: 2px solid transparent;
+}
+.ah-item:hover { background: var(--bg-mid); border-top-color: var(--g); }
+.ah-n { font-family: var(--cap); font-size: 24px; font-weight: 600; color: var(--g); line-height: 1; margin-bottom: 4px; }
+.ah-l { font-family: var(--cap); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--brown); }
+.ah-d { font-family: var(--serif); font-size: 13px; color: var(--muted); font-weight: 300; margin-top: 3px; }
+
+/* ── PHILOSOPHY ─────────────────────────────────────────── */
+.philosophy {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  background: var(--dark);
+}
+.phil-content {
+  padding: clamp(64px,8vw,100px) 8% clamp(64px,8vw,100px) 5%;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.phil-content .tag { color: rgba(139,105,20,.7); }
+.phil-content .tag::before,.phil-content .tag::after { background: rgba(139,105,20,.5); }
+.phil-content .h-title { color: var(--gp); }
+.phil-content .h-lead { color: rgba(122,106,84,.85); margin-bottom: 28px; }
+.phil-def {
+  padding: 24px; border-left: 2px solid var(--g);
+  background: rgba(139,105,20,.06); margin-bottom: 28px;
+}
+.phil-def p { font-family: var(--serif); font-size: 17px; font-style: italic; color: rgba(226,207,160,.8); line-height: 1.75; }
+.phil-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: rgba(139,105,20,.1);
+}
+.pg-item {
+  background: #1E1408; padding: 18px 20px; transition: background .3s;
+}
+.pg-item:hover { background: #221A08; }
+.pg-title { font-family: var(--cap); font-size: 9.5px; letter-spacing: .14em; color: var(--g3); margin-bottom: 6px; text-transform: uppercase; }
+.pg-item p { font-family: var(--serif); font-size: 13.5px; color: rgba(122,106,84,.75); line-height: 1.65; font-weight: 300; }
+
+.phil-visual {
+  background: var(--dark2); display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; min-height: 500px;
+}
+.phil-visual::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, transparent 42%, rgba(10,6,2,.45) 100%);
+  pointer-events: none; z-index: 2;
+}
+.phil-om { position: absolute; font-family: serif; font-size: 120px; color: var(--g); opacity: .05; user-select: none; }
+.yantra { width: min(70%,340px); opacity: .42; animation: spin 120s linear infinite reverse; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── PROCESS ─────────────────────────────────────────────── */
+.process { background: var(--bg); padding: clamp(64px,8vw,100px) 5%; text-align: center; }
+.process .tag { justify-content: center; }
+.process .h-title, .process .h-lead { margin: 0 auto; text-align: center; }
+.process .h-lead { margin-bottom: 56px; }
+.proc-steps {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 0; position: relative; max-width: 1100px; margin: 0 auto;
+}
+.proc-line {
+  position: absolute; top: 36px; left: 12.5%; right: 12.5%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--g) 20%, var(--g2) 50%, var(--g) 80%, transparent);
+  opacity: .28;
+}
+.proc-step {
+  padding: 0 24px; display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+}
+.proc-circle {
+  width: 72px; height: 72px;
+  border: 1px solid rgba(139,105,20,.35); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg); position: relative; z-index: 1;
+  margin-bottom: 24px; transition: all .45s;
+}
+.proc-circle::after {
+  content: '';
+  position: absolute; inset: -5px;
+  border-radius: 50%; border: 1px solid rgba(139,105,20,.15);
+  transform: scale(.8); opacity: 0;
+  transition: transform .45s, opacity .45s;
+}
+.proc-circle:hover { background: var(--dark); border-color: var(--g); }
+.proc-circle:hover::after { transform: scale(1); opacity: 1; }
+.proc-circle:hover .proc-n { color: var(--g3); }
+.proc-n { font-family: var(--cap); font-size: 17px; font-weight: 600; color: var(--g); }
+.proc-step h4 { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--dark); margin-bottom: 10px; }
+.proc-step p { font-family: var(--serif); font-size: 14px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+
+@media(max-width:900px){
+  .about-main { grid-template-columns: 1fr; }
+  .about-photo-col { min-height: 380px; order: -1; }
+  .about-body { padding: 52px 5%; }
+  .philosophy { grid-template-columns: 1fr; }
+  .phil-visual { min-height: 260px; order: -1; }
+  .phil-content { padding: 52px 5%; }
+  .proc-steps { grid-template-columns: repeat(2,1fr); gap: 32px; }
+  .proc-line { display: none; }
+  .about-highlights { grid-template-columns: 1fr 1fr; }
+  .phil-grid { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:560px){
+  .about-highlights { grid-template-columns: 1fr; }
+  .phil-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="logo-a">
+    <svg class="logo-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="gA" x1="20%" y1="15%" x2="80%" y2="85%"><stop offset="0%" stop-color="#D4A84B"/><stop offset="50%" stop-color="#8B6914"/><stop offset="100%" stop-color="#5C4A0A"/></linearGradient><linearGradient id="gB" x1="80%" y1="15%" x2="20%" y2="85%"><stop offset="0%" stop-color="#C4A040"/><stop offset="100%" stop-color="#7A5E10"/></linearGradient></defs>
+      <circle cx="60" cy="60" r="57" stroke="url(#gA)" stroke-width=".7"/>
+      <g transform="translate(60,60)">
+        <ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(22.5)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(45)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(67.5)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(90)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(112.5)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(135)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(157.5)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(180)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(202.5)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(225)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(247.5)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(270)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(292.5)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(315)"/><ellipse cx="0" cy="-40" rx="6" ry="12.5" stroke="url(#gA)" stroke-width=".5" fill="rgba(139,105,20,.07)" transform="rotate(337.5)"/>
+        <ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(45)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(90)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(135)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(180)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(225)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(270)"/><ellipse cx="0" cy="-25" rx="5" ry="10.5" stroke="url(#gB)" stroke-width=".5" fill="rgba(139,105,20,.1)" transform="rotate(315)"/>
+        <circle cx="0" cy="0" r="13" stroke="url(#gA)" stroke-width=".8" fill="rgba(139,105,20,.05)"/>
+        <path d="M0,-7 L5,0 L0,7 L-5,0 Z" stroke="url(#gA)" stroke-width=".6" fill="none"/>
+        <circle cx="0" cy="0" r="2.5" fill="url(#gA)"/>
+      </g>
+    </svg>
+    <div class="logo-words">
+      <span class="logo-brand">VASTU</span>
+      <span class="logo-sub">RIYAZ NADAF</span>
+      <span class="logo-line">Where Ancient Wisdom meets Modern Living</span>
+    </div>
+  </a>
+  <ul class="nav-ul">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="act">About</a></li>
+    <li><a href="awards.html">Awards</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="media.html">Media</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book Consultation</a>
+  <button id="mBtn" aria-label="Menu">☰</button>
+</nav>
+<div id="mMenu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="awards.html">Awards</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="media.html">Media Coverage</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="m-book">Book Consultation</a>
+</div>
+
+<!-- PAGE BANNER -->
+<div class="pg-banner">
+  <span class="pg-tag">The Consultant</span>
+  <h1 class="pg-title">Riyaz Nadaf —<br>Master of <em>Vastu Shastra</em></h1>
+  <p class="pg-lead">Four decades of dedicated practice, transforming spaces and lives through the ancient science of spatial harmony.</p>
+  <div class="pg-rule"></div>
+</div>
+
+<!-- ABOUT MAIN -->
+<section class="about-main">
+  <div class="about-photo-col r">
+    <div class="about-photo-decor"></div>
+    <img src="Awards/awards1.jpg" alt="Riyaz Nadaf receiving Business Titans Award" loading="lazy">
+    <div class="about-photo-quote">
+      <div class="apq-mark">"</div>
+      <p class="apq-text">Good Vastu is not just about directions — it's about creating a life of balance, happiness and growth. When a space is aligned, everything else follows.</p>
+      <cite class="apq-cite">— Riyaz Nadaf</cite>
+    </div>
+  </div>
+  <div class="about-body r d1">
+    <div class="tag">About</div>
+    <h2 class="h-title">Four Decades of<br><em>Transforming Lives</em></h2>
+    <p class="about-intro">With over <em>forty years</em> of dedicated practice, Riyaz Nadaf has established himself as one of India's most respected Vastu consultants — a practitioner whose expertise transcends borders and whose results speak louder than words.</p>
+    <div class="about-paras">
+      <p>Beginning his journey in the early 1980s, Riyaz Nadaf developed a unique approach to Vastu Shastra — one that honours the 5,000-year-old tradition while embracing the realities of modern architecture and urban living. His methodology is built on deep study of ancient Sanskrit texts, personal mentorship from respected Vastu masters, and thousands of real-world consultations.</p>
+      <p>His philosophy is refreshingly grounded: no pyramids, no crystals, no unnecessary rituals. Just a precise, science-based understanding of directional energies, spatial geometry and elemental balance — applied with surgical accuracy to transform any space into a haven of harmony and prosperity.</p>
+      <p>Today, his practice spans continents. From intimate family homes in Kolhapur to corporate campuses in Pune, from private residences in Germany to luxury villas in the USA — Riyaz Nadaf's guidance has helped thousands of families and businesses unlock their full potential simply by aligning their spaces with the laws of nature.</p>
+    </div>
+    <div class="pull-q" style="margin-bottom:28px">
+      <p>When a space is truly aligned, everything else follows — health, prosperity, relationships and peace of mind all come into harmony.</p>
+      <cite>— Riyaz Nadaf, Four Decades of Practice</cite>
+    </div>
+    <div class="about-highlights">
+      <div class="ah-item">
+        <div class="ah-n">40+</div>
+        <div class="ah-l">Years Experience</div>
+        <div class="ah-d">Decades of trusted practice</div>
+      </div>
+      <div class="ah-item">
+        <div class="ah-n">500+</div>
+        <div class="ah-l">Properties Healed</div>
+        <div class="ah-d">Residential &amp; commercial</div>
+      </div>
+      <div class="ah-item">
+        <div class="ah-n">Global</div>
+        <div class="ah-l">Clientele</div>
+        <div class="ah-d">India, Germany, USA &amp; more</div>
+      </div>
+      <div class="ah-item">
+        <div class="ah-n">Multi</div>
+        <div class="ah-l">Award Winner</div>
+        <div class="ah-d">Business Titans &amp; more</div>
+      </div>
+    </div>
+    <a href="contact.html" class="btn-dk">Book a Consultation →</a>
+  </div>
+</section>
+
+<!-- PHILOSOPHY / WHAT IS VASTU -->
+<section class="philosophy">
+  <div class="phil-visual">
+    <span class="phil-om">ॐ</span>
+    <svg class="yantra" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="10" width="280" height="280" stroke="#8B6914" stroke-width="1"/>
+      <rect x="30" y="30" width="240" height="240" stroke="#8B6914" stroke-width=".5"/>
+      <polygon points="150,30 270,270 30,270" stroke="#8B6914" stroke-width=".8" fill="none"/>
+      <polygon points="150,270 30,30 270,30" stroke="#8B6914" stroke-width=".8" fill="none"/>
+      <circle cx="150" cy="150" r="80" stroke="#8B6914" stroke-width=".5"/>
+      <circle cx="150" cy="150" r="52" stroke="#8B6914" stroke-width=".6"/>
+      <circle cx="150" cy="150" r="22" stroke="#8B6914" stroke-width="1"/>
+      <circle cx="150" cy="150" r="5" fill="#A07B22"/>
+      <line x1="150" y1="10" x2="150" y2="290" stroke="#8B6914" stroke-width=".3"/>
+      <line x1="10" y1="150" x2="290" y2="150" stroke="#8B6914" stroke-width=".3"/>
+      <line x1="30" y1="30" x2="270" y2="270" stroke="#8B6914" stroke-width=".3"/>
+      <line x1="270" y1="30" x2="30" y2="270" stroke="#8B6914" stroke-width=".3"/>
+      <text x="144" y="26" fill="#8B6914" font-size="10" font-family="serif">N</text>
+      <text x="144" y="294" fill="#8B6914" font-size="10" font-family="serif">S</text>
+      <text x="14" y="155" fill="#8B6914" font-size="10" font-family="serif">W</text>
+      <text x="283" y="155" fill="#8B6914" font-size="10" font-family="serif">E</text>
+    </svg>
+  </div>
+  <div class="phil-content r d1">
+    <div class="tag">The Science</div>
+    <h2 class="h-title">What is <em>Vastu Shastra</em></h2>
+    <p class="h-lead">The ancient Indian science of architecture and spatial design — a 5,000-year-old body of knowledge governing the design, layout and geometry of living spaces.</p>
+    <div class="phil-def">
+      <p>"Vastu is a Sanskrit word — Vaas: to live, Tu: you. A place where you live or dwell. Shastra means a text which contains knowledge or instructions."</p>
+    </div>
+    <div class="phil-grid">
+      <div class="pg-item">
+        <div class="pg-title">Panchabhutas</div>
+        <p>Balancing the five elements — Earth, Water, Fire, Air and Space — within your environment.</p>
+      </div>
+      <div class="pg-item">
+        <div class="pg-title">Directional Energy</div>
+        <p>Each of the eight directions carries specific cosmic energies governing health, wealth and relationships.</p>
+      </div>
+      <div class="pg-item">
+        <div class="pg-title">Sacred Geometry</div>
+        <p>Precise proportion and geometry of spaces creates resonance with universal harmony.</p>
+      </div>
+      <div class="pg-item">
+        <div class="pg-title">Cosmic Alignment</div>
+        <p>Synchronizing your living space with the movement of the sun, moon and planetary influences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process r">
+  <div class="tag">How It Works</div>
+  <h2 class="h-title">The Consultation <em>Process</em></h2>
+  <p class="h-lead" style="margin-bottom:56px">From first enquiry to a harmonized space — a clear, guided journey every step of the way.</p>
+  <div class="proc-steps">
+    <div class="proc-line"></div>
+    <div class="proc-step">
+      <div class="proc-circle"><span class="proc-n">01</span></div>
+      <h4>Initial Enquiry</h4>
+      <p>Submit your details and space information. We understand your goals, concerns and the type of space to be evaluated.</p>
+    </div>
+    <div class="proc-step">
+      <div class="proc-circle"><span class="proc-n">02</span></div>
+      <h4>Floor Plan Review</h4>
+      <p>Share your floor plan or site map. Our expert analyzes directional alignments, energy zones and structural layout.</p>
+    </div>
+    <div class="proc-step">
+      <div class="proc-circle"><span class="proc-n">03</span></div>
+      <h4>Detailed Analysis</h4>
+      <p>Receive a comprehensive Vastu report with directional findings, energy assessments and specific remedial suggestions.</p>
+    </div>
+    <div class="proc-step">
+      <div class="proc-circle"><span class="proc-n">04</span></div>
+      <h4>Implementation</h4>
+      <p>We guide you through every remedy and change — complete transformation without unnecessary structural alterations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-ban r">
+  <div>
+    <div class="tag">Ready to Transform?</div>
+    <h2 class="cta-h2">Begin Your Journey to<br><em>Harmonious Living</em> Today</h2>
+    <p class="cta-body">Schedule a consultation and discover how Vastu Shastra can bring prosperity, peace and positive energy into your life.</p>
+  </div>
+  <div class="cta-acts">
+    <a href="contact.html" class="btn-gol">Book Your Consultation</a>
+    <a href="awards.html" class="cta-note">See our Awards &amp; Recognition →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div>
+      <div class="ft-brand-name">VASTU <span>RIYAZ NADAF</span></div>
+      <div class="ft-tagline">Where Ancient Wisdom meets Modern Living</div>
+      <p class="ft-desc">India's trusted Vastu Shastra consultant for over four decades — transforming homes, offices and lives.</p>
+    </div>
+    <div class="ft-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="awards.html">Awards</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="media.html">Media</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="ft-col"><h4>Services</h4><ul><li><a href="contact.html">Residential Vastu</a></li><li><a href="contact.html">Commercial Vastu</a></li><li><a href="contact.html">Energy Balancing</a></li><li><a href="contact.html">New Construction</a></li><li><a href="contact.html">Online Consultation</a></li><li><a href="contact.html">Industrial Vastu</a></li></ul></div>
+    <div class="ft-col"><h4>Connect</h4><ul><li><a href="https://vasturiyaznadaf.com">vasturiyaznadaf.com</a></li><li><a href="#">@vasturiyaznadaf</a></li><li><a href="contact.html">Book a Consultation</a></li><li><a href="contact.html">Send an Enquiry</a></li></ul></div>
+  </div>
+  <div class="ft-bot"><span>© 2026 Vastu Riyaz Nadaf. All rights reserved.</span><span><a href="https://vasturiyaznadaf.com">vasturiyaznadaf.com</a></span></div>
+</footer>
+
+<script>
+var nb=document.getElementById('navbar');
+window.addEventListener('scroll',function(){nb.classList.toggle('scrolled',scrollY>40)},{passive:true});
+var mb=document.getElementById('mBtn'),mm=document.getElementById('mMenu');
+mb.addEventListener('click',function(){var o=mm.classList.toggle('on');mb.textContent=o?'✕':'☰';});
+mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('on');mb.textContent='☰';});});
+var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.r, .r-l, .r-r').forEach(function(el){ro.observe(el);});
+</script>
+</body>
+</html>
