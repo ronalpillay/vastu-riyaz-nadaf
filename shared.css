@@ -509,11 +509,31 @@ footer::before {
   .g3c, .g4c { grid-template-columns: repeat(2,1fr); }
   .g5c { grid-template-columns: repeat(2,1fr); }
   .ft-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .cta-ban { flex-direction: column; }
-  .pg-banner { padding: 72px 5% 60px; }
+  .cta-ban { flex-direction: column; align-items: flex-start; }
+  .cta-acts { width: 100%; }
+  .pg-banner { padding: 80px 5% 68px; }
+  .pg-title { font-size: clamp(36px, 9vw, 60px); }
+  .pg-lead { font-size: 15px; max-width: 100%; margin-top: 16px; }
+  .h-title { font-size: clamp(28px, 6vw, 44px); }
+  .h-lead { font-size: 15px; }
+  #mMenu { padding: 20px 5% 28px; }
+  #mMenu li a { padding: 14px 0; font-size: 11px; }
+  .pull-q p { font-size: 16px; }
 }
-@media(max-width:560px) {
-  .g3c, .g4c, .g5c { grid-template-columns: 1fr; }
+@media(max-width:640px) {
+  .g3c { grid-template-columns: repeat(2,1fr); }
+  .g4c { grid-template-columns: repeat(2,1fr); }
+  .g5c { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width:480px) {
+  .pg-banner { padding: 72px 5% 60px; }
+  .pg-title { font-size: clamp(32px, 9vw, 52px); }
+  .g3c { grid-template-columns: 1fr; }
   .ft-grid { grid-template-columns: 1fr; }
   .ft-bot { flex-direction: column; text-align: center; }
+  .cta-ban { padding: 60px 5%; }
+  .cta-h2 { font-size: clamp(24px, 6vw, 36px); }
+  .cta-body { font-size: 15px; }
+  .tag { font-size: 9px; letter-spacing: .26em; }
+  .btn-dk, .btn-ol, .btn-gol, .btn-pale { padding: 12px 22px; font-size: 9.5px; }
 }

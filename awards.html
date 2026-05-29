@@ -66,9 +66,22 @@
 
 @media(max-width:900px) {
   .awd-lead { grid-template-columns: 1fr; }
-  .awd-lead-side { border-left: none; border-top: 1px solid rgba(139,105,20,.12); }
+  .awd-lead-text { padding: 52px 5%; }
+  .awd-lead-side { border-left: none; border-top: 1px solid rgba(139,105,20,.12); padding: 48px 5%; }
+  .ald-stat { padding: 18px 0; }
+  .ald-n { font-size: clamp(30px, 7vw, 46px); }
+  .feat-awd { padding: 60px 5%; }
   .feat-awd-grid { grid-template-columns: 1fr; }
   .feat-detail { padding: 36px 28px; }
+  .awd-g-hd { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media(max-width:560px) {
+  .awd-lead-text { padding: 44px 5%; }
+  .awd-lead-side { padding: 40px 5%; }
+  .ald-n { font-size: clamp(28px, 8vw, 40px); }
+  .feat-detail { padding: 28px 20px; }
+  .fd-title { font-size: clamp(20px, 5vw, 26px); }
+  .fd-body { font-size: 14px; }
 }
 </style>
 </head>

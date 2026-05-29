@@ -177,19 +177,34 @@
 
 @media(max-width:900px){
   .about-main { grid-template-columns: 1fr; }
-  .about-photo-col { min-height: 380px; order: -1; }
+  .about-photo-col { min-height: 360px; order: -1; }
   .about-body { padding: 52px 5%; }
-  .philosophy { grid-template-columns: 1fr; }
-  .phil-visual { min-height: 260px; order: -1; }
-  .phil-content { padding: 52px 5%; }
-  .proc-steps { grid-template-columns: repeat(2,1fr); gap: 32px; }
-  .proc-line { display: none; }
+  .about-intro { font-size: 17px; }
+  /* Hide drop cap on mobile — float causes layout issues */
+  .about-paras p:first-child::first-letter { float: none; font-size: 1em; color: inherit; margin: 0; }
   .about-highlights { grid-template-columns: 1fr 1fr; }
+  .philosophy { grid-template-columns: 1fr; }
+  .phil-visual { min-height: 240px; order: -1; }
+  .phil-content { padding: 52px 5%; }
   .phil-grid { grid-template-columns: 1fr 1fr; }
+  .proc-steps { grid-template-columns: repeat(2,1fr); gap: 36px; }
+  .proc-line { display: none; }
+  .proc-step { padding: 0 12px; }
 }
 @media(max-width:560px){
-  .about-highlights { grid-template-columns: 1fr; }
+  .about-photo-col { min-height: 280px; }
+  .about-highlights { grid-template-columns: 1fr 1fr; }
+  .ah-n { font-size: 20px; }
   .phil-grid { grid-template-columns: 1fr; }
+  .proc-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .proc-circle { width: 60px; height: 60px; }
+  .proc-n { font-size: 15px; }
+  .proc-step h4 { font-size: 18px; }
+  .proc-step p { font-size: 13.5px; }
+}
+@media(max-width:400px){
+  .proc-steps { grid-template-columns: 1fr; }
+  .proc-step { align-items: center; text-align: center; }
 }
 </style>
 </head>

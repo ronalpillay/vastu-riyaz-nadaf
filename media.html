@@ -68,8 +68,17 @@
 }
 
 @media(max-width:900px){
+  .media-intro { padding: 60px 5%; }
   .media-intro-inner { grid-template-columns: 1fr; gap: 40px; }
   .media-stats-row { grid-template-columns: repeat(3,1fr); }
+  .ms-n { font-size: clamp(32px, 6vw, 44px); }
+  .sec-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media(max-width:560px){
+  .media-intro { padding: 52px 5%; }
+  .media-stats-row { grid-template-columns: 1fr; gap: 1px; }
+  .media-stat { padding: 24px 5%; text-align: left; }
+  .ms-n { font-size: 36px; }
 }
 </style>
 </head>

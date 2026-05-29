@@ -111,7 +111,28 @@
 .letter-sec .r { max-width: 1200px; margin: 0 auto 44px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
 .lc-tag { font-family: var(--cap); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); padding: 8px 16px; border: 1px solid var(--rule); }
 
-@media(max-width:900px) { .quotes-grid { grid-template-columns: 1fr; } }
+@media(max-width:900px) {
+  .feat-quote-hero { padding: 72px 5% 80px; }
+  .fqh-text { font-size: clamp(18px, 4vw, 26px); margin-bottom: 32px; }
+  .fqh-bg { font-size: clamp(160px, 40vw, 300px); }
+  .test-stats-strip { grid-template-columns: repeat(3,1fr); }
+  .tss-n { font-size: clamp(22px, 5vw, 32px); }
+  .quotes-grid { grid-template-columns: 1fr; }
+  .q-card { padding: 32px 24px; }
+  .q-mark { font-size: 56px; }
+  .letter-sec .r { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+@media(max-width:560px) {
+  .feat-quote-hero { padding: 60px 5% 68px; }
+  .fqh-text { font-size: 17px; }
+  .fqh-bg { font-size: clamp(130px, 38vw, 200px); }
+  .test-stats-strip { grid-template-columns: 1fr; }
+  .tss-item { border-right: none; border-bottom: 1px solid rgba(139,105,20,.08); padding: 20px 5%; text-align: left; }
+  .tss-item:last-child { border-bottom: none; }
+  .q-card { padding: 28px 20px; }
+  .section-divider { padding: 32px 5%; }
+  .section-divider p { font-size: 9px; letter-spacing: .2em; }
+}
 </style>
 </head>
 <body>

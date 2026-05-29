@@ -146,9 +146,27 @@
 
 @media(max-width:900px){
   .contact-sec { grid-template-columns: 1fr; }
-  .c-info { padding: 52px 5%; border-right: none; border-bottom: 1px solid rgba(139,105,20,.12); }
+  .c-info { padding: 56px 5% 48px; border-right: none; border-bottom: 1px solid rgba(139,105,20,.12); }
+  .c-info .h-title { font-size: clamp(28px, 7vw, 40px); }
+  .c-info .h-lead { margin-bottom: 32px; }
+  .c-items { gap: 20px; }
+  .c-icon { width: 38px; height: 38px; }
+  .c-why { margin-top: 28px; padding-top: 24px; }
+  .service-pills { margin-top: 24px; }
+  .socials { margin-top: 28px; }
   .c-form-panel { padding: 52px 5%; }
-  .f-row { grid-template-columns: 1fr; }
+  .c-form-panel::before { display: none; }
+  .f-row { grid-template-columns: 1fr; gap: 0; }
+  .form-heading { font-size: clamp(24px, 6vw, 36px); margin-bottom: 24px; }
+  .trust-row { gap: 14px; margin-top: 24px; padding-top: 22px; }
+}
+@media(max-width:560px){
+  .c-info { padding: 44px 5%; }
+  .service-pills { gap: 6px; }
+  .svc-pill { font-size: 8px; padding: 7px 11px; }
+  .f-group input, .f-group select, .f-group textarea { padding: 12px 14px; font-size: 15px; }
+  .f-submit { font-size: 10px; letter-spacing: .16em; padding: 15px; }
+  .trust-item { font-size: 7.5px; }
 }
 </style>
 </head>
