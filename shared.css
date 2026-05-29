@@ -43,6 +43,10 @@ body {
 img { display: block; max-width: 100%; }
 a { color: inherit; }
 
+/* ── PAGE ENTRANCE ───────────────────────────────────────── */
+@keyframes bodyIn { from { opacity: 0; } to { opacity: 1; } }
+body { animation: bodyIn .6s cubic-bezier(.16,1,.3,1) .05s both; }
+
 /* Aged paper grain overlay */
 body::after {
   content: '';
@@ -485,6 +489,14 @@ footer::before {
 .orn-div { display: flex; align-items: center; justify-content: center; padding: 32px 5%; gap: 18px; }
 .orn-div::before, .orn-div::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
 .orn-sym { font-family: var(--serif); font-size: 22px; color: var(--g); opacity: .4; flex-shrink: 0; line-height: 1; user-select: none; }
+
+/* ── CURSOR GLOW (injected by shared.js) ────────────────── */
+.cursor-glow {
+  position: absolute; inset: 0;
+  pointer-events: none; z-index: 0;
+  transition: background .3s ease;
+  border-radius: inherit;
+}
 
 /* ── EDITORIAL NUMBER (large decorative) ─────────────────── */
 .h-num {

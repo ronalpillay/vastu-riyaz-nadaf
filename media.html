@@ -130,9 +130,9 @@
       <p class="h-lead" style="margin-bottom:0">From early features in publications like "Changing Fortunes" to extensive coverage in leading regional and national media — Riyaz Nadaf's expertise has been recognized and documented across four decades of practice.</p>
     </div>
     <div class="media-stats-row">
-      <div class="media-stat"><span class="ms-n">36</span><span class="ms-l">Recent Articles</span></div>
-      <div class="media-stat"><span class="ms-n">14</span><span class="ms-l">Archive Features</span></div>
-      <div class="media-stat"><span class="ms-n">40+</span><span class="ms-l">Years Covered</span></div>
+      <div class="media-stat"><span class="ms-n" data-count="36">36</span><span class="ms-l">Recent Articles</span></div>
+      <div class="media-stat"><span class="ms-n" data-count="14">14</span><span class="ms-l">Archive Features</span></div>
+      <div class="media-stat"><span class="ms-n" data-count="40" data-suffix="+">40+</span><span class="ms-l">Years Covered</span></div>
     </div>
   </div>
 </section>
@@ -220,5 +220,6 @@ document.getElementById('lb-p').addEventListener('click',function(){if(!activeGa
 document.getElementById('lb-n').addEventListener('click',function(){if(!activeGal)return;cur=(cur+1)%activeGal.length;document.getElementById('lb-img').src=activeGal[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+activeGal.length;});
 document.addEventListener('keydown',function(e){if(!document.getElementById('lb').classList.contains('on'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'&&activeGal){cur=(cur-1+activeGal.length)%activeGal.length;document.getElementById('lb-img').src=activeGal[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+activeGal.length;}if(e.key==='ArrowRight'&&activeGal){cur=(cur+1)%activeGal.length;document.getElementById('lb-img').src=activeGal[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+activeGal.length;}});
 </script>
+<script src="shared.js" defer></script>
 </body>
 </html>

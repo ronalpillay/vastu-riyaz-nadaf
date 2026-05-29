@@ -189,8 +189,8 @@
 
 <!-- STATS STRIP -->
 <div class="test-stats-strip">
-  <div class="tss-item"><div class="tss-n">500+</div><div class="tss-l">Clients Served</div></div>
-  <div class="tss-item"><div class="tss-n">40+</div><div class="tss-l">Years of Practice</div></div>
+  <div class="tss-item"><div class="tss-n" data-count="500" data-suffix="+">500+</div><div class="tss-l">Clients Served</div></div>
+  <div class="tss-item"><div class="tss-n" data-count="40" data-suffix="+">40+</div><div class="tss-l">Years of Practice</div></div>
   <div class="tss-item"><div class="tss-n">Global</div><div class="tss-l">Clientele</div></div>
 </div>
 
@@ -305,5 +305,6 @@ document.getElementById('lb-p').addEventListener('click',function(){cur=(cur-1+i
 document.getElementById('lb-n').addEventListener('click',function(){cur=(cur+1)%imgs.length;document.getElementById('lb-img').src=imgs[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+imgs.length;});
 document.addEventListener('keydown',function(e){if(!document.getElementById('lb').classList.contains('on'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'){cur=(cur-1+imgs.length)%imgs.length;document.getElementById('lb-img').src=imgs[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+imgs.length;}if(e.key==='ArrowRight'){cur=(cur+1)%imgs.length;document.getElementById('lb-img').src=imgs[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+imgs.length;}});
 </script>
+<script src="shared.js" defer></script>
 </body>
 </html>

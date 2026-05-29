@@ -649,7 +649,7 @@
     <div class="stat-d">Four decades of trusted practice</div>
   </div>
   <div class="stat-i">
-    <div class="stat-n">500+</div>
+    <div class="stat-n" data-count="500" data-suffix="+">500+</div>
     <div class="stat-l">Properties Healed</div>
     <div class="stat-d">Residential &amp; commercial spaces</div>
   </div>
@@ -868,79 +868,6 @@
   </div>
 </footer>
 
-<script>
-/* ── NAV: transparent → solid on scroll ─────────────── */
-var nb = document.getElementById('navbar');
-window.addEventListener('scroll', function() {
-  nb.classList.toggle('scrolled', scrollY > 60);
-}, { passive: true });
-
-/* ── MOBILE MENU ─────────────────────────────────────── */
-var mb = document.getElementById('mBtn'), mm = document.getElementById('mMenu');
-mb.addEventListener('click', function() {
-  var o = mm.classList.toggle('on');
-  mb.textContent = o ? '✕' : '☰';
-});
-mm.querySelectorAll('a').forEach(function(a) {
-  a.addEventListener('click', function() { mm.classList.remove('on'); mb.textContent = '☰'; });
-});
-
-/* ── HERO PARALLAX ───────────────────────────────────── */
-var heroBg = document.getElementById('heroBg');
-window.addEventListener('scroll', function() {
-  if (scrollY < window.innerHeight * 1.2 && heroBg) {
-    heroBg.style.transform = 'translateY(' + (scrollY * 0.36) + 'px)';
-  }
-}, { passive: true });
-
-/* ── SCROLL REVEAL ───────────────────────────────────── */
-var ro = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -28px 0px' });
-document.querySelectorAll('.r, .r-l, .r-r').forEach(function(el) { ro.observe(el); });
-
-/* ── STATS COUNTER ───────────────────────────────────── */
-document.querySelectorAll('.stat-n[data-count]').forEach(function(el) {
-  var observed = new IntersectionObserver(function(entries) {
-    if (!entries[0].isIntersecting) return;
-    observed.disconnect();
-    var target = +el.dataset.count;
-    var suffix = el.dataset.suffix || '';
-    var start = 0, duration = 1400, t0 = null;
-    function step(ts) {
-      if (!t0) t0 = ts;
-      var p = Math.min((ts - t0) / duration, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(eased * target) + suffix;
-      if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }, { threshold: 0.5 });
-  observed.observe(el);
-});
-
-/* ── AWARDS MARQUEE ──────────────────────────────────── */
-(function() {
-  var track = document.getElementById('awdTrack');
-  if (!track) return;
-  var imgs = [];
-  for (var i = 1; i <= 15; i++) imgs.push('Awards/awards' + i + '.jpg');
-  var all = imgs.concat(imgs); // duplicate for seamless loop
-  all.forEach(function(src) {
-    var d = document.createElement('div');
-    d.className = 'awd-slide';
-    var img = document.createElement('img');
-    img.src = src; img.alt = ''; img.loading = 'lazy';
-    var ov = document.createElement('div');
-    ov.className = 'awd-slide-ov';
-    d.appendChild(img); d.appendChild(ov);
-    track.appendChild(d);
-  });
-  var dur = imgs.length * 2.6;
-  track.style.animationDuration = dur + 's';
-})();
-</script>
+<script src="shared.js" defer></script>
 </body>
 </html>

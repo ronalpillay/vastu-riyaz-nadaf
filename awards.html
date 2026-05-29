@@ -133,11 +133,11 @@
   </div>
   <div class="awd-lead-side r d1">
     <div class="ald-stat">
-      <span class="ald-n">15+</span>
+      <span class="ald-n" data-count="15" data-suffix="+">15+</span>
       <span class="ald-l">Awards &amp; Honours Received</span>
     </div>
     <div class="ald-stat">
-      <span class="ald-n">40+</span>
+      <span class="ald-n" data-count="40" data-suffix="+">40+</span>
       <span class="ald-l">Years of Recognized Excellence</span>
     </div>
     <div class="ald-stat">
@@ -242,5 +242,6 @@ document.getElementById('lb-p').addEventListener('click',function(){cur=(cur-1+i
 document.getElementById('lb-n').addEventListener('click',function(){cur=(cur+1)%imgs.length;document.getElementById('lb-img').src=imgs[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+imgs.length;});
 document.addEventListener('keydown',function(e){if(!document.getElementById('lb').classList.contains('on'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft'){cur=(cur-1+imgs.length)%imgs.length;document.getElementById('lb-img').src=imgs[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+imgs.length;}if(e.key==='ArrowRight'){cur=(cur+1)%imgs.length;document.getElementById('lb-img').src=imgs[cur];document.getElementById('lb-ct').textContent=(cur+1)+' / '+imgs.length;}});
 </script>
+<script src="shared.js" defer></script>
 </body>
 </html>

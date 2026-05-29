@@ -429,5 +429,6 @@ mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function
 var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -32px 0px'});
 document.querySelectorAll('.r, .r-l, .r-r').forEach(function(el){ro.observe(el);});
 </script>
+<script src="shared.js" defer></script>
 </body>
 </html>
