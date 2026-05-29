@@ -140,7 +140,7 @@
 .stats-strip {
   background: var(--dark);
   display: grid; grid-template-columns: repeat(4,1fr);
-  border-bottom: 1px solid rgba(139,105,20,.1);
+  border-bottom: 1px solid rgba(139,105,20,.12);
   position: relative;
 }
 .stats-strip::before {
@@ -148,81 +148,99 @@
   position: absolute; inset: 0;
   background-image: repeating-linear-gradient(
     45deg,
-    rgba(139,105,20,.016) 0, rgba(139,105,20,.016) 1px,
+    rgba(139,105,20,.018) 0, rgba(139,105,20,.018) 1px,
     transparent 1px, transparent 26px
   );
   pointer-events: none;
 }
 .stat-i {
-  padding: 36px 5%; border-right: 1px solid rgba(139,105,20,.08);
+  padding: 40px 5% 36px; border-right: 1px solid rgba(139,105,20,.09);
   display: flex; align-items: flex-start; gap: 0;
   flex-direction: column;
   position: relative; transition: background .4s;
+  overflow: hidden;
 }
 .stat-i::before {
   content: '';
   position: absolute; left: 0; top: 0; bottom: 0;
-  width: 0; background: rgba(139,105,20,.05);
-  transition: width .4s ease;
+  width: 0; background: rgba(139,105,20,.055);
+  transition: width .45s cubic-bezier(.16,1,.3,1);
 }
 .stat-i:hover::before { width: 100%; }
+/* Vastu direction watermarks (N E W S) */
+.stat-i::after {
+  position: absolute; top: 14px; right: 18px;
+  font-family: var(--cap); font-size: 52px; font-weight: 700;
+  color: rgba(139,105,20,.07); line-height: 1;
+  pointer-events: none; user-select: none;
+  transition: color .4s;
+}
+.stat-i:hover::after { color: rgba(139,105,20,.12); }
+.stat-i:nth-child(1)::after { content: 'N'; }
+.stat-i:nth-child(2)::after { content: 'E'; }
+.stat-i:nth-child(3)::after { content: 'W'; }
+.stat-i:nth-child(4)::after { content: 'S'; }
 .stat-i:last-child { border-right: none; }
 .stat-n {
-  font-family: var(--cap); font-size: 42px;
+  font-family: var(--cap); font-size: 46px;
   font-weight: 700; color: var(--gp); line-height: 1;
-  letter-spacing: -.02em;
-  transition: color .3s;
+  letter-spacing: -.025em;
+  transition: color .3s; position: relative; z-index: 1;
 }
-.stat-i:hover .stat-n { color: var(--g3); text-shadow: 0 0 28px rgba(191,154,64,.2); }
+.stat-i:hover .stat-n { color: var(--g3); text-shadow: 0 0 32px rgba(191,154,64,.22); }
 .stat-l {
   font-family: var(--cap); font-size: 9.5px;
   letter-spacing: .16em; text-transform: uppercase;
-  color: var(--g2); margin-top: 8px;
+  color: var(--g2); margin-top: 9px;
+  position: relative; z-index: 1;
 }
 .stat-d {
   font-family: var(--serif); font-size: 13.5px;
-  color: rgba(90,74,42,.65); font-weight: 300; margin-top: 4px;
-  font-style: italic;
+  color: rgba(90,74,42,.62); font-weight: 300; margin-top: 4px;
+  font-style: italic; position: relative; z-index: 1;
 }
 
 /* ── MANIFESTO ────────────────────────────────────────── */
 .manifesto {
   background: var(--bg);
   padding: clamp(72px,9vw,120px) 5%;
-  text-align: center;
   position: relative; overflow: hidden;
   border-bottom: 1px solid var(--rule);
 }
 .manifesto::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(139,105,20,.05) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 30% 50%, rgba(139,105,20,.05) 0%, transparent 60%);
   pointer-events: none;
 }
-.manifesto::after {
-  content: 'VASTU';
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--cap);
-  font-size: clamp(80px, 14vw, 196px);
-  font-weight: 700; color: var(--g);
-  opacity: .03; letter-spacing: .22em;
-  pointer-events: none; user-select: none;
-  white-space: nowrap; line-height: 1; z-index: 0;
+.manifesto-inner {
+  display: flex; align-items: center;
+  gap: clamp(16px, 4vw, 64px);
+  max-width: 1100px; margin: 0 auto;
+  position: relative; z-index: 1;
 }
-.manifesto-text, .manifesto-attr { position: relative; z-index: 1; }
+.manifesto-num {
+  font-family: var(--cap);
+  font-size: clamp(110px, 17vw, 230px);
+  font-weight: 700; color: var(--g);
+  opacity: .08; line-height: .9;
+  flex-shrink: 0; user-select: none;
+  letter-spacing: -.04em;
+  transition: opacity .6s;
+}
+.manifesto:hover .manifesto-num { opacity: .12; }
+.manifesto-body { flex: 1; }
 .manifesto-text {
   font-family: var(--serif);
-  font-size: clamp(22px, 2.8vw, 38px);
+  font-size: clamp(21px, 2.5vw, 36px);
   font-style: italic; font-weight: 300;
-  color: var(--dark); line-height: 1.5;
-  max-width: 880px; margin: 0 auto 28px;
-  letter-spacing: -.01em; position: relative;
+  color: var(--dark); line-height: 1.55;
+  margin-bottom: 28px; letter-spacing: -.012em;
 }
-.manifesto-text::before { content: '\201C'; color: var(--g); margin-right: 4px; }
-.manifesto-text::after  { content: '\201D'; color: var(--g); margin-left: 4px; }
+.manifesto-text::before { content: '\201C'; color: var(--g); margin-right: 2px; }
+.manifesto-text::after  { content: '\201D'; color: var(--g); margin-left: 2px; }
 .manifesto-attr {
-  display: flex; align-items: center; justify-content: center; gap: 14px;
+  display: flex; align-items: center; gap: 14px;
   font-family: var(--cap); font-size: 9px;
   letter-spacing: .28em; text-transform: uppercase; color: var(--lite);
 }
@@ -258,13 +276,14 @@
 }
 .about-img-col:hover img { transform: scale(1.02); }
 .about-badge {
-  position: absolute; bottom: 28px; left: 28px;
-  background: var(--g); padding: 18px 22px;
+  position: absolute; bottom: 32px; left: 32px;
+  background: var(--g); padding: 20px 26px;
   display: flex; flex-direction: column; gap: 2px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.35);
 }
-.ab-n { font-family: var(--cap); font-size: 28px; font-weight: 700; color: var(--dark); line-height: 1; }
-.ab-l { font-family: var(--cap); font-size: 8.5px; letter-spacing: .12em; color: var(--dark); text-transform: uppercase; margin-top: 3px; }
-.about-rule { position: absolute; top: 48px; right: 0; width: 3px; height: 128px; background: var(--g); }
+.ab-n { font-family: var(--cap); font-size: 32px; font-weight: 700; color: var(--dark); line-height: 1; }
+.ab-l { font-family: var(--cap); font-size: 8.5px; letter-spacing: .14em; color: rgba(26,18,8,.75); text-transform: uppercase; margin-top: 4px; }
+.about-rule { position: absolute; top: 40px; right: 0; width: 3px; height: 140px; background: linear-gradient(to bottom, var(--g3), var(--g)); }
 
 /* ── SERVICES (editorial list) ────────────────────────── */
 .svc-sec {
@@ -285,25 +304,34 @@
   display: grid;
   grid-template-columns: 88px 1fr 100px;
   gap: 0 32px; align-items: center;
-  padding: 32px 0;
+  padding: 34px 0;
   border-top: 1px solid rgba(139,105,20,.1);
   position: relative; cursor: default;
 }
 .svc-row:last-child { border-bottom: 1px solid rgba(139,105,20,.1); }
+.svc-row::before {
+  content: '';
+  position: absolute; left: 0; top: 0;
+  width: 2px; height: 0;
+  background: linear-gradient(to bottom, var(--g3), var(--g));
+  transition: height .5s cubic-bezier(.16,1,.3,1);
+  z-index: 1;
+}
+.svc-row:hover::before { height: 100%; }
 .svc-row::after {
   content: '';
   position: absolute; left: -5%; top: 0; bottom: 0;
   width: 0; background: rgba(139,105,20,.03);
-  transition: width .5s ease;
+  transition: width .55s cubic-bezier(.16,1,.3,1);
   pointer-events: none;
 }
 .svc-row:hover::after { width: calc(100% + 10%); }
 .sr-n {
-  font-family: var(--cap); font-size: 44px; font-weight: 700;
-  color: rgba(139,105,20,.14); line-height: 1.1;
+  font-family: var(--cap); font-size: 46px; font-weight: 700;
+  color: rgba(139,105,20,.13); line-height: 1.1;
   transition: color .45s; align-self: start; padding-top: 2px;
 }
-.svc-row:hover .sr-n { color: rgba(139,105,20,.42); }
+.svc-row:hover .sr-n { color: rgba(139,105,20,.45); }
 .sr-body { }
 .sr-title {
   font-family: var(--serif); font-size: 24px;
@@ -337,18 +365,18 @@
 }
 .awd-track:hover { animation-play-state: paused; }
 .awd-slide {
-  width: 340px; flex-shrink: 0;
+  width: 360px; flex-shrink: 0;
   aspect-ratio: 4/3; overflow: hidden;
   cursor: pointer; background: var(--dark2); position: relative;
 }
-.awd-slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .55s ease; }
-.awd-slide:hover img { transform: scale(1.04); }
+.awd-slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .65s cubic-bezier(.16,1,.3,1), filter .5s; }
+.awd-slide:hover img { transform: scale(1.06); filter: brightness(.88); }
 .awd-slide-ov {
   position: absolute; inset: 0;
   background: rgba(10,6,2,0);
-  transition: background .3s;
+  transition: background .4s;
 }
-.awd-slide:hover .awd-slide-ov { background: rgba(10,6,2,.18); }
+.awd-slide:hover .awd-slide-ov { background: rgba(10,6,2,.25); }
 @keyframes awdScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ── TESTIMONIALS ─────────────────────────────────────── */
@@ -391,12 +419,16 @@
   max-width: 1200px; margin: 0 auto;
   position: relative; z-index: 1;
 }
-.ts { background: #171007; padding: 36px 32px; transition: background .4s; }
-.ts:hover { background: #1C1409; }
+.ts {
+  background: #171007; padding: 40px 36px;
+  transition: background .4s, border-top-color .4s;
+  border-top: 2px solid transparent;
+}
+.ts:hover { background: #1D1509; border-top-color: var(--g); }
 .ts-q {
-  font-family: var(--serif); font-size: 15.5px;
-  font-style: italic; color: rgba(176,152,108,.78);
-  line-height: 1.8; font-weight: 300; margin-bottom: 22px;
+  font-family: var(--serif); font-size: 16px;
+  font-style: italic; color: rgba(176,152,108,.82);
+  line-height: 1.85; font-weight: 300; margin-bottom: 24px;
 }
 .ts-auth { display: flex; align-items: center; gap: 12px; }
 .ts-av {
@@ -597,11 +629,16 @@
 
 <!-- MANIFESTO -->
 <section class="manifesto r">
-  <p class="manifesto-text">We believe your space holds the power to transform every aspect of your life — and Vastu Shastra, practiced with integrity and precision, is the key.</p>
-  <div class="manifesto-attr">
-    <span class="manifesto-rule"></span>
-    <span>Riyaz Nadaf · 40 Years of Practice</span>
-    <span class="manifesto-rule"></span>
+  <div class="manifesto-inner">
+    <div class="manifesto-num" aria-hidden="true">40</div>
+    <div class="manifesto-body">
+      <p class="manifesto-text">We believe your space holds the power to transform every aspect of your life — and Vastu Shastra, practiced with integrity and precision, is the key.</p>
+      <div class="manifesto-attr">
+        <span class="manifesto-rule"></span>
+        <span>Riyaz Nadaf · 40 Years of Practice</span>
+        <span class="manifesto-rule"></span>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -24,12 +24,26 @@
 .ald-l { font-family: var(--cap); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(122,106,84,.6); margin-top: 6px; display: block; }
 
 /* ── GALLERY ────────────────────────────────────────── */
-.awd-gallery-sec { padding: clamp(56px,7vw,88px) 5%; background: var(--bg); }
-.awd-g-hd { max-width: 1200px; margin: 0 auto 44px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
+.awd-gallery-sec { padding: clamp(56px,7vw,88px) 5%; background: var(--bg); position: relative; }
+.awd-gallery-sec::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(to right, transparent, var(--rule) 30%, var(--rule) 70%, transparent);
+}
+.awd-g-hd { max-width: 1200px; margin: 0 auto 48px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
 .awd-count { font-family: var(--cap); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); padding: 8px 16px; border: 1px solid var(--rule); }
 
 /* ── FEATURED AWARD ─────────────────────────────────── */
-.feat-awd { background: var(--dark); padding: clamp(64px,8vw,104px) 5%; position: relative; }
+.feat-awd {
+  background: var(--dark); padding: clamp(64px,8vw,104px) 5%;
+  position: relative;
+}
+.feat-awd::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, transparent, var(--g) 25%, var(--g3) 50%, var(--g) 75%, transparent);
+  opacity: .4;
+}
 .feat-awd .tag { color: rgba(139,105,20,.7); }
 .feat-awd .tag::before,.feat-awd .tag::after { background: rgba(139,105,20,.5); }
 .feat-awd .h-title { color: var(--gp); max-width: 700px; }

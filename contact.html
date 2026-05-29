@@ -28,7 +28,7 @@
 .c-info > * { position: relative; z-index: 1; }
 .c-info .tag { color: rgba(139,105,20,.7); }
 .c-info .tag::before,.c-info .tag::after { background: rgba(139,105,20,.5); }
-.c-info .h-title { color: var(--gp); font-size: clamp(28px,3.5vw,44px); }
+.c-info .h-title { color: var(--gp); font-size: clamp(30px,3.8vw,48px); line-height: 1.1; }
 .c-info .h-lead { color: rgba(122,106,84,.8); margin-bottom: 40px; }
 
 /* Why section */
@@ -92,7 +92,7 @@
 
 .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
 .f-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
-.f-group label { font-family: var(--cap); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+.f-group label { font-family: var(--cap); font-size: 8.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
 .f-group input,.f-group select,.f-group textarea {
   background: var(--bg); border: 1px solid rgba(139,105,20,.18);
   padding: 14px 16px; font-family: var(--serif); font-size: 15px;
@@ -127,17 +127,22 @@
 
 /* Trust row below form */
 .trust-row {
-  display: flex; gap: 24px; align-items: center;
-  margin-top: 28px; padding-top: 28px;
+  display: flex; gap: 20px; align-items: center;
+  margin-top: 30px; padding-top: 28px;
   border-top: 1px solid var(--rule);
   flex-wrap: wrap;
 }
 .trust-item {
-  display: flex; align-items: center; gap: 10px;
-  font-family: var(--serif); font-size: 13px;
-  color: var(--muted); font-style: italic;
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--cap); font-size: 8px;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--lite);
 }
-.trust-item::before { content: '◆'; color: var(--g); font-size: 7px; flex-shrink: 0; }
+.trust-item::before {
+  content: '';
+  display: block; width: 5px; height: 5px;
+  background: var(--g); border-radius: 50%; flex-shrink: 0;
+}
 
 @media(max-width:900px){
   .contact-sec { grid-template-columns: 1fr; }
