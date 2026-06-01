@@ -304,7 +304,7 @@
   display: grid;
   grid-template-columns: 88px 1fr 100px;
   gap: 0 32px; align-items: center;
-  padding: 34px 0;
+  padding: 36px 0 36px 18px;
   border-top: 1px solid rgba(139,105,20,.1);
   position: relative; cursor: default;
 }
@@ -328,27 +328,28 @@
 .svc-row:hover::after { width: calc(100% + 10%); }
 .sr-n {
   font-family: var(--cap); font-size: 46px; font-weight: 700;
-  color: rgba(139,105,20,.13); line-height: 1.1;
+  color: rgba(191,154,64,.22); line-height: 1.1;
   transition: color .45s; align-self: start; padding-top: 2px;
 }
-.svc-row:hover .sr-n { color: rgba(139,105,20,.45); }
+.svc-row:hover .sr-n { color: rgba(191,154,64,.55); }
 .sr-body { }
 .sr-title {
-  font-family: var(--serif); font-size: 24px;
+  font-family: var(--serif); font-size: 25px;
   font-weight: 400; color: var(--gp);
-  margin-bottom: 8px; letter-spacing: -.01em;
+  margin-bottom: 9px; letter-spacing: -.01em;
   transition: color .3s;
 }
-.svc-row:hover .sr-title { color: var(--gp); }
+.svc-row:hover .sr-title { color: #fff; }
 .sr-desc {
-  font-family: var(--serif); font-size: 14.5px;
-  color: rgba(180,158,118,.82); line-height: 1.8; font-weight: 300;
+  font-family: var(--serif); font-size: 15px;
+  color: rgba(220, 200, 165, .78); line-height: 1.82; font-weight: 300;
   max-width: 500px;
 }
+.svc-row:hover .sr-desc { color: rgba(220, 200, 165, .92); }
 .sr-link {
   font-family: var(--cap); font-size: 9.5px;
   letter-spacing: .18em; text-transform: uppercase;
-  color: rgba(139,105,20,.45); text-decoration: none;
+  color: rgba(191,154,64,.55); text-decoration: none;
   white-space: nowrap; text-align: right;
   transition: color .3s, letter-spacing .4s;
 }
