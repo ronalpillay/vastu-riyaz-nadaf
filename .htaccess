@@ -5,11 +5,15 @@ RewriteEngine On
 RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
 RewriteRule ^ / [R=301,L]
 
-# other-page.html → /other-page
+# de/index.html → /de/
+RewriteCond %{THE_REQUEST} \s/+de/index\.html[\s?] [NC]
+RewriteRule ^ /de/ [R=301,L]
+
+# other-page.html → /other-page (including /de/page.html → /de/page)
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
-# Serve clean URLs by appending .html internally
+# Serve clean URLs by appending .html internally (works for /de/about → /de/about.html)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]

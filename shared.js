@@ -183,8 +183,9 @@
   /* ── AWARDS MARQUEE (homepage only) ─────────────────── */
   var awdTrack = document.getElementById('awdTrack');
   if (awdTrack) {
+    var awdBase = /(^|\/)de\//.test(location.pathname) ? '../' : '';
     var imgs = [];
-    for (var i = 1; i <= 15; i++) imgs.push('Awards/awards' + i + '.jpg');
+    for (var i = 1; i <= 15; i++) imgs.push(awdBase + 'Awards/awards' + i + '.jpg');
     var all = imgs.concat(imgs);
     all.forEach(function (src, idx) {
       var d = document.createElement('div');
