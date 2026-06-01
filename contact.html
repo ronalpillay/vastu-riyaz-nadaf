@@ -19,6 +19,7 @@
 <meta name="twitter:image" content="https://vasturiyaz.com/hero%20Banner.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://formsubmit.co">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
 <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap"></noscript>
@@ -382,15 +383,6 @@
     <span>Made by <a href="https://planetu.co.in" target="_blank" rel="noopener">Planet U</a></span></div>
 </footer>
 
-<script>
-var nb=document.getElementById('navbar');
-window.addEventListener('scroll',function(){nb.classList.toggle('scrolled',scrollY>40)},{passive:true});
-var mb=document.getElementById('mBtn'),mm=document.getElementById('mMenu');
-mb.addEventListener('click',function(){var o=mm.classList.toggle('on');mb.textContent=o?'✕':'☰';});
-mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('on');mb.textContent='☰';});});
-var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -32px 0px'});
-document.querySelectorAll('.r').forEach(function(el){ro.observe(el);});
-</script>
 <script src="shared.js" defer></script>
 </body>
 </html>
