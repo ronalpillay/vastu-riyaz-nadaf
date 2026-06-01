@@ -199,6 +199,27 @@
     awdTrack.style.animationDuration = (imgs.length * 2.5) + 's';
   }
 
+  /* ── GDPR PRIVACY BANNER ────────────────────────────── */
+  if (!localStorage.getItem('gdpr_ok')) {
+    var isDE = /\/de\//.test(window.location.pathname);
+    var banner = document.createElement('div');
+    banner.className = 'gdpr-banner';
+    banner.innerHTML = '<p class="gdpr-text">' +
+      (isDE
+        ? 'Diese Website verwendet keine Tracking-Cookies. Kontaktanfragen werden über formsubmit.co verarbeitet. <a href="/de/privacy">Datenschutzerklärung</a>'
+        : 'This site uses no tracking cookies. Contact enquiries are processed via formsubmit.co. <a href="/privacy">Privacy Policy</a>') +
+      '</p><div class="gdpr-acts">' +
+      '<a href="' + (isDE ? '/de/privacy' : '/privacy') + '" class="gdpr-more">' + (isDE ? 'Mehr erfahren' : 'Learn more') + '</a>' +
+      '<button class="gdpr-ok" id="gdpr-ok">' + (isDE ? 'Verstanden' : 'Got it') + '</button>' +
+      '</div>';
+    document.body.appendChild(banner);
+    setTimeout(function () { banner.classList.add('on'); }, 800);
+    document.getElementById('gdpr-ok').addEventListener('click', function () {
+      banner.classList.remove('on');
+      localStorage.setItem('gdpr_ok', '1');
+    });
+  }
+
   /* ── WHATSAPP FLOATING BUTTON ───────────────────────── */
   var wa = document.createElement('a');
   wa.href = 'https://wa.me/918806878699?text=Hello%20Riyaz%20Nadaf%20sir%2C%20I%20would%20like%20to%20book%20a%20Vastu%20consultation';
