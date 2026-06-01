@@ -21,16 +21,21 @@
   /* ── MOBILE MENU ────────────────────────────────────── */
   var mb = document.getElementById('mBtn'), mm = document.getElementById('mMenu');
   if (mb && mm) {
-    mb.addEventListener('click', function () {
-      var open = mm.classList.toggle('on');
-      mb.textContent = open ? '✕' : '☰';
-      mb.setAttribute('aria-expanded', open);
-    });
+    var mc = document.getElementById('mm-close');
+    function openMenu() {
+      mm.classList.add('on');
+      document.body.style.overflow = 'hidden';
+      mb.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      mm.classList.remove('on');
+      document.body.style.overflow = '';
+      mb.setAttribute('aria-expanded', 'false');
+    }
+    mb.addEventListener('click', openMenu);
+    if (mc) mc.addEventListener('click', closeMenu);
     mm.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        mm.classList.remove('on');
-        mb.textContent = '☰';
-      });
+      a.addEventListener('click', closeMenu);
     });
   }
 
@@ -181,11 +186,11 @@
     var imgs = [];
     for (var i = 1; i <= 15; i++) imgs.push('Awards/awards' + i + '.jpg');
     var all = imgs.concat(imgs);
-    all.forEach(function (src) {
+    all.forEach(function (src, idx) {
       var d = document.createElement('div');
       d.className = 'awd-slide';
       var img = document.createElement('img');
-      img.src = src; img.alt = ''; img.loading = 'lazy';
+      img.src = src; img.alt = 'Riyaz Nadaf — award recognition ' + ((idx % imgs.length) + 1); img.loading = 'lazy';
       var ov = document.createElement('div'); ov.className = 'awd-slide-ov';
       d.appendChild(img); d.appendChild(ov);
       awdTrack.appendChild(d);

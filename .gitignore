@@ -1,6 +1,21 @@
-.DS_Store
-.firecrawl/
-*.png.bak
+# Design reference mockups (not served)
+Hero banner design.png
+Home page fesign.png
+Sample design Vastu .png
+Screenshot*.png
+
+# Uncompressed backup images
+Awards/awards9_orig.jpg
+
+# Draft / archive HTML pages
 index-7.html
 vastu-riyaz.html
 vasturiyaznadaf.html
+
+# Local backups
+_backup-*/
+
+# OS noise
+.DS_Store
+Thumbs.db
+.firecrawl/
