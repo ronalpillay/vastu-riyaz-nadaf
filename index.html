@@ -355,22 +355,24 @@
 }
 .svc-row:hover .sr-link { color: var(--g3); letter-spacing: .26em; }
 
-/* Pancha Bhuta element symbols on service numbers */
+/* Pancha Bhuta element labels — desktop hover only */
 .sr-n { position: relative; }
-.sr-n::after {
-  display: block;
-  font-family: var(--serif); font-weight: 300;
-  font-size: 13px; color: var(--g3); opacity: 0;
-  margin-top: 5px; letter-spacing: .04em;
-  transition: opacity .4s;
+@media(hover: hover) and (pointer: fine) {
+  .sr-n::after {
+    display: block;
+    font-family: var(--serif); font-weight: 300;
+    font-size: 12px; color: var(--g3); opacity: 0;
+    margin-top: 6px; letter-spacing: .04em;
+    transition: opacity .4s; white-space: nowrap;
+  }
+  .svc-row:hover .sr-n::after { opacity: .7; }
+  .svc-row:nth-child(1) .sr-n::after { content: 'Prithvi · Earth'; }
+  .svc-row:nth-child(2) .sr-n::after { content: 'Agni · Fire'; }
+  .svc-row:nth-child(3) .sr-n::after { content: 'Vayu · Air'; }
+  .svc-row:nth-child(4) .sr-n::after { content: 'Jal · Water'; }
+  .svc-row:nth-child(5) .sr-n::after { content: 'Akasha · Space'; }
+  .svc-row:nth-child(6) .sr-n::after { content: 'Pancha · All'; }
 }
-.svc-row:hover .sr-n::after { opacity: .7; }
-.svc-row:nth-child(1) .sr-n::after { content: 'Prithvi · Earth'; }
-.svc-row:nth-child(2) .sr-n::after { content: 'Agni · Fire'; }
-.svc-row:nth-child(3) .sr-n::after { content: 'Vayu · Air'; }
-.svc-row:nth-child(4) .sr-n::after { content: 'Jal · Water'; }
-.svc-row:nth-child(5) .sr-n::after { content: 'Akasha · Space'; }
-.svc-row:nth-child(6) .sr-n::after { content: 'Pancha · All'; }
 
 /* Five Elements strip */
 .elements-strip {
