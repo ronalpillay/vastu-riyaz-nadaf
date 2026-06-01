@@ -196,7 +196,7 @@
 }
 .stat-d {
   font-family: var(--serif); font-size: 13.5px;
-  color: rgba(90,74,42,.62); font-weight: 300; margin-top: 4px;
+  color: rgba(180,155,110,.72); font-weight: 300; margin-top: 4px;
   font-style: italic; position: relative; z-index: 1;
 }
 
@@ -298,7 +298,7 @@
   max-width: 1100px; margin: 0 auto 56px;
 }
 .svc-hd .h-title { color: var(--gp); margin-bottom: 0; }
-.svc-hd .h-lead { color: rgba(122,106,84,.75); max-width: 420px; }
+.svc-hd .h-lead { color: rgba(180,158,118,.88); max-width: 420px; }
 .svc-list { max-width: 1100px; margin: 0 auto; }
 .svc-row {
   display: grid;
@@ -342,7 +342,7 @@
 .svc-row:hover .sr-title { color: var(--gp); }
 .sr-desc {
   font-family: var(--serif); font-size: 14.5px;
-  color: rgba(122,106,84,.7); line-height: 1.8; font-weight: 300;
+  color: rgba(180,158,118,.82); line-height: 1.8; font-weight: 300;
   max-width: 500px;
 }
 .sr-link {
@@ -353,6 +353,46 @@
   transition: color .3s, letter-spacing .4s;
 }
 .svc-row:hover .sr-link { color: var(--g3); letter-spacing: .26em; }
+
+/* Pancha Bhuta element symbols on service numbers */
+.sr-n { position: relative; }
+.sr-n::after {
+  display: block;
+  font-family: var(--serif); font-weight: 300;
+  font-size: 13px; color: var(--g3); opacity: 0;
+  margin-top: 5px; letter-spacing: .04em;
+  transition: opacity .4s;
+}
+.svc-row:hover .sr-n::after { opacity: .7; }
+.svc-row:nth-child(1) .sr-n::after { content: 'Prithvi · Earth'; }
+.svc-row:nth-child(2) .sr-n::after { content: 'Agni · Fire'; }
+.svc-row:nth-child(3) .sr-n::after { content: 'Vayu · Air'; }
+.svc-row:nth-child(4) .sr-n::after { content: 'Jal · Water'; }
+.svc-row:nth-child(5) .sr-n::after { content: 'Akasha · Space'; }
+.svc-row:nth-child(6) .sr-n::after { content: 'Pancha · All'; }
+
+/* Five Elements strip */
+.elements-strip {
+  background: var(--dark); border-top: 1px solid rgba(139,105,20,.1);
+  display: grid; grid-template-columns: repeat(5,1fr);
+}
+.el-item {
+  padding: 28px 5%; text-align: center;
+  border-right: 1px solid rgba(139,105,20,.07);
+  transition: background .4s;
+  position: relative; cursor: default;
+}
+.el-item:last-child { border-right: none; }
+.el-item:hover { background: rgba(139,105,20,.04); }
+.el-sym {
+  font-family: var(--serif); font-size: 28px;
+  color: var(--g3); line-height: 1; display: block;
+  margin-bottom: 10px; opacity: .7;
+  transition: opacity .4s, transform .4s;
+}
+.el-item:hover .el-sym { opacity: 1; transform: scale(1.12); }
+.el-name { font-family: var(--cap); font-size: 8.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--g2); display: block; }
+.el-sanskrit { font-family: var(--serif); font-size: 11px; font-style: italic; color: rgba(122,106,84,.55); margin-top: 3px; display: block; }
 
 /* ── AWARDS STRIP ─────────────────────────────────────── */
 .awd-sec { background: var(--bg); padding: clamp(64px,8vw,100px) 0; overflow: hidden; }
@@ -427,7 +467,7 @@
 .ts:hover { background: #1D1509; border-top-color: var(--g); }
 .ts-q {
   font-family: var(--serif); font-size: 16px;
-  font-style: italic; color: rgba(176,152,108,.82);
+  font-style: italic; color: rgba(210,185,145,.88);
   line-height: 1.85; font-weight: 300; margin-bottom: 24px;
 }
 .ts-auth { display: flex; align-items: center; gap: 12px; }
@@ -443,6 +483,11 @@
 
 /* ── RESPONSIVE ───────────────────────────────────────── */
 @media(max-width:900px){
+  .elements-strip { grid-template-columns: repeat(5,1fr); }
+  .el-item { padding: 20px 2%; }
+  .el-sym { font-size: 22px; }
+  .el-name { font-size: 7.5px; letter-spacing: .16em; }
+  .el-sanskrit { display: none; }
   .hero h1 { font-size: clamp(38px,10vw,60px); }
   .hero-sub { font-size: clamp(32px,8.5vw,52px); }
   .hero-content { margin-left: 5%; padding-left: 18px; }
@@ -679,6 +724,35 @@
     </div>
   </div>
 </section>
+
+<!-- FIVE ELEMENTS STRIP -->
+<div class="elements-strip r">
+  <div class="el-item">
+    <span class="el-sym">⊕</span>
+    <span class="el-name">Earth</span>
+    <span class="el-sanskrit">Prithvi</span>
+  </div>
+  <div class="el-item">
+    <span class="el-sym">△</span>
+    <span class="el-name">Fire</span>
+    <span class="el-sanskrit">Agni</span>
+  </div>
+  <div class="el-item">
+    <span class="el-sym">◎</span>
+    <span class="el-name">Air</span>
+    <span class="el-sanskrit">Vayu</span>
+  </div>
+  <div class="el-item">
+    <span class="el-sym">〜</span>
+    <span class="el-name">Water</span>
+    <span class="el-sanskrit">Jal</span>
+  </div>
+  <div class="el-item">
+    <span class="el-sym">·</span>
+    <span class="el-name">Space</span>
+    <span class="el-sanskrit">Akasha</span>
+  </div>
+</div>
 
 <!-- ABOUT TEASER -->
 <section class="about-sec">

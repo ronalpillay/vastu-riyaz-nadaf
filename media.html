@@ -17,7 +17,7 @@
 .media-intro .tag { color: rgba(139,105,20,.7); }
 .media-intro .tag::before,.media-intro .tag::after { background: rgba(139,105,20,.5); }
 .media-intro .h-title { color: var(--gp); }
-.media-intro .h-lead { color: rgba(122,106,84,.82); }
+.media-intro .h-lead { color: rgba(190,168,128,.9); }
 .media-stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(139,105,20,.12); margin-top: 0; }
 .media-stat {
   text-align: center; padding: 36px 20px;
@@ -207,7 +207,7 @@ Object.keys(allGals).forEach(function(key){
     var src=g.prefix+i+'.jpg';
     g.imgs.push(src);
     var d=document.createElement('div');d.className='g-item';d.dataset.gal=key;d.dataset.i=i-1;
-    d.innerHTML='<img src="'+src+'" alt="" loading="lazy"><div class="g-ov"><div class="g-ico">⤢</div></div>';
+    d.innerHTML='<img src="'+src+'" alt="" loading="lazy"><div class="g-ov"><div class="g-ico" aria-hidden="true"></div></div>';
     d.addEventListener('click',function(){openLB(this.dataset.gal,+this.dataset.i);});
     c.appendChild(d);
   }

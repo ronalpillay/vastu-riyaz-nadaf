@@ -292,7 +292,7 @@ var imgs=[],cur=0;
     var src='Testimonials/Testimonials_'+i+'.jpg';
     imgs.push(src);
     var d=document.createElement('div');d.className='g-item';d.dataset.i=i-1;
-    d.innerHTML='<img src="'+src+'" alt="" loading="lazy"><div class="g-ov"><div class="g-ico">⤢</div></div>';
+    d.innerHTML='<img src="'+src+'" alt="" loading="lazy"><div class="g-ov"><div class="g-ico" aria-hidden="true"></div></div>';
     d.addEventListener('click',function(){openLB(+this.dataset.i);});
     c.appendChild(d);
   }

@@ -44,9 +44,9 @@
 
   /* ── NUMBER COUNTER ─────────────────────────────────── */
   document.querySelectorAll('[data-count]').forEach(function (el) {
-    var obs = new IntersectionObserver(function (entries) {
-      if (!entries[0].isIntersecting) return;
-      obs.disconnect();
+    var fired = false;
+    function runCounter() {
+      if (fired) return; fired = true;
       var target = +el.dataset.count;
       var suffix = el.dataset.suffix || '';
       var duration = 1600, t0 = null;
@@ -58,8 +58,19 @@
         if (p < 1) requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
-    }, { threshold: 0.6 });
+    }
+    var obs = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      obs.disconnect(); runCounter();
+    }, { threshold: 0.5 });
     obs.observe(el);
+    /* also fire immediately if element is already in viewport on load */
+    window.addEventListener('load', function () {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92 && r.bottom > 0) {
+        setTimeout(runCounter, 350);
+      }
+    }, { once: true });
   });
 
   /* ── CURSOR GLOW ON DARK SECTIONS ───────────────────── */
