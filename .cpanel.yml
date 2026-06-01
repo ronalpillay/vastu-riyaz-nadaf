@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home1/scaleupglobal/public_html/vasturiyaz.com/
+    - export DEPLOYPATH=/home1/scaleupglobal/vasturiyaz.com/
     - /bin/cp -R * $DEPLOYPATH
