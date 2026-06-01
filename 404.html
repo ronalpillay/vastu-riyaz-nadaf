@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Vastu Riyaz Nadaf</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&display=swap">
+<link rel="stylesheet" href="shared.css">
+<style>
+.err-wrap {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 60px 5%;
+  background: var(--dark);
+}
+.err-num {
+  font-family: var(--serif); font-size: clamp(100px,20vw,180px);
+  font-weight: 300; font-style: italic;
+  color: rgba(139,105,20,.18); line-height: 1;
+  letter-spacing: -.04em; margin-bottom: 0;
+}
+.err-rule { width: 56px; height: 1px; background: var(--g); margin: 24px auto; }
+.err-title {
+  font-family: var(--cap); font-size: clamp(13px,2vw,16px);
+  letter-spacing: .28em; text-transform: uppercase;
+  color: var(--gp); margin-bottom: 20px;
+}
+.err-body {
+  font-family: var(--serif); font-size: 17px; font-weight: 300;
+  color: rgba(190,168,128,.7); line-height: 1.8;
+  max-width: 420px; margin: 0 auto 40px;
+}
+.err-links { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+</style>
+</head>
+<body>
+<div class="err-wrap">
+  <p class="err-num">404</p>
+  <div class="err-rule"></div>
+  <h1 class="err-title">Page Not Found</h1>
+  <p class="err-body">The page you're looking for doesn't exist or has been moved. Let us guide you back.</p>
+  <div class="err-links">
+    <a href="/" class="btn-gol">Go Home</a>
+    <a href="/contact" class="btn-pale">Book a Consultation</a>
+  </div>
+</div>
+<script src="shared.js" defer></script>
+</body>
+</html>
