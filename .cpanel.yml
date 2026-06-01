@@ -3,3 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home1/scaleupglobal/vasturiyaz.com/
     - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH
