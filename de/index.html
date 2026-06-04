@@ -544,6 +544,7 @@
   .hero-content { margin-left: 5%; padding-left: 18px; }
   .hero-desc { font-size: 15.5px; }
   .hero-btns { gap: 10px; }
+  .hero-compass svg { width: min(36vmin, 320px); opacity: .07; }
   /* Manifesto: restore centered on tablet/mobile */
   .manifesto { text-align: center; }
   .manifesto-inner { flex-direction: column; align-items: center; gap: 0; }
@@ -579,6 +580,9 @@
   .hero-sub { font-size: clamp(28px, 8vw, 44px); }
   .hero-content { padding-left: 14px; }
   .hero-desc { font-size: 15px; max-width: 100%; }
+  .hero-compass { display: none; }
+  .hero-btns { flex-direction: column; width: 100%; }
+  .hero-btns .btn-gol, .hero-btns .btn-ol { width: 100%; justify-content: center; }
   .stats-strip { grid-template-columns: 1fr 1fr; }
   .stat-n { font-size: 32px; }
   .stat-i::after { font-size: 30px; }
