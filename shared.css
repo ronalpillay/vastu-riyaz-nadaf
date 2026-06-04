@@ -653,7 +653,7 @@ body::after {
 /* ── FOOTER ──────────────────────────────────────────────── */
 footer {
   background: #0B0804; padding: 64px 5% 32px;
-  position: relative;
+  position: relative; color: rgba(200,175,130,.82);
 }
 footer::before {
   content: '';
