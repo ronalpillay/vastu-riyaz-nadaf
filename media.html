@@ -7,6 +7,9 @@
 <meta name="description" content="Newspapers, magazines and broadcasters on Riyaz Nadaf's four decades of Vastu Shastra expertise — explore press features and media coverage from across India.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://vasturiyaz.com/media">
+<link rel="alternate" hreflang="en" href="https://vasturiyaz.com/media">
+<link rel="alternate" hreflang="de" href="https://vasturiyaz.com/de/media">
+<link rel="alternate" hreflang="x-default" href="https://vasturiyaz.com/media">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vastu Riyaz Nadaf">
 <meta property="og:title" content="Media Coverage — Vastu Riyaz Nadaf">
@@ -24,8 +27,8 @@
 .media-intro::before { content: ''; position: absolute; right: -40px; top: 50%; transform: translateY(-50%); width: 440px; height: 440px; border-radius: 50%; border: 1px solid rgba(139,105,20,.05); pointer-events: none; }
 .media-intro::after { content: ''; position: absolute; right: 40px; top: 50%; transform: translateY(-50%); width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(139,105,20,.07); pointer-events: none; }
 .media-intro-inner { max-width: 1100px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; z-index: 1; }
-.media-intro .tag { color: rgba(139,105,20,.7); }
-.media-intro .tag::before,.media-intro .tag::after { background: rgba(139,105,20,.5); }
+.media-intro .tag { color: var(--g3); }
+.media-intro .tag::before,.media-intro .tag::after { background: var(--g3); }
 .media-intro .h-title { color: var(--gp); }
 .media-intro .h-lead { color: rgba(220,200,165,.97); }
 .media-stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(139,105,20,.12); margin-top: 0; }
@@ -45,7 +48,7 @@
 .media-stat:hover::before { opacity: 1; }
 .ms-n { font-family: var(--cap); font-size: clamp(36px,5vw,52px); font-weight: 700; color: var(--g3); line-height: 1; transition: color .3s; }
 .media-stat:hover .ms-n { color: var(--gp); }
-.ms-l { font-family: var(--cap); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: rgba(122,106,84,.65); margin-top: 8px; display: block; }
+.ms-l { font-family: var(--cap); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--g3); margin-top: 8px; display: block; }
 
 /* ── ARTICLE SECTIONS ────────────────────────────────── */
 .articles-sec {
@@ -58,12 +61,12 @@
   background: linear-gradient(to right, transparent, var(--g) 25%, var(--g3) 50%, var(--g) 75%, transparent);
   opacity: .35;
 }
-.articles-sec .tag { color: rgba(139,105,20,.7); }
-.articles-sec .tag::before,.articles-sec .tag::after { background: rgba(139,105,20,.5); }
+.articles-sec .tag { color: var(--g3); }
+.articles-sec .tag::before,.articles-sec .tag::after { background: var(--g3); }
 .articles-sec .h-title { color: var(--gp); }
-.articles-sec .h-lead { color: rgba(122,106,84,.75); }
+.articles-sec .h-lead { color: rgba(210,185,145,.9); }
 .sec-header { max-width: 1200px; margin: 0 auto 44px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
-.sec-count { font-family: var(--cap); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(122,106,84,.6); padding: 8px 16px; border: 1px solid rgba(139,105,20,.18); }
+.sec-count { font-family: var(--cap); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: rgba(191,154,64,.8); padding: 8px 16px; border: 1px solid rgba(139,105,20,.3); }
 .articles-sec .h-lead { max-width: 1200px; margin: -28px auto 44px; display: block; }
 
 .archives-sec {
@@ -94,7 +97,7 @@
 .feat-art-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(139,105,20,.12); }
 .feat-art-item { background: var(--dark2); padding: 36px 32px; transition: background .35s; }
 .feat-art-item:hover { background: #1E1408; }
-.fa-pub { font-family: var(--cap); font-size: 9.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--g3); margin-bottom: 14px; display: block; }
+.fa-pub { font-family: var(--cap); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--g3); margin-bottom: 14px; display: block; }
 .fa-art-title { font-family: var(--serif); font-size: 21px; font-weight: 400; color: var(--gp); margin-bottom: 14px; line-height: 1.3; letter-spacing: -.01em; }
 .fa-art-body { font-family: var(--serif); font-size: 16px; color: rgba(220,200,165,.94); line-height: 1.88; font-weight: 400; }
 @media(max-width:900px) { .feat-art-grid { grid-template-columns: 1fr; } .feat-art-item { padding: 28px 24px; } }

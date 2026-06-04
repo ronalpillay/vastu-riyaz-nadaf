@@ -9,10 +9,11 @@ Static multi-page website for **Riyaz Nadaf**, a Vastu Shastra consultant with 4
 ## Development
 
 ```bash
-python3 -m http.server 8080   # local dev server at http://localhost:8080
+python3 serve.py   # preferred — mimics .htaccess clean-URL rewriting at http://localhost:8080
+python3 -m http.server 8080   # fallback — clean URLs (/about) won't resolve
 ```
 
-Open any `.html` file directly in a browser — no server required, but a server avoids browser CORS quirks.
+`serve.py` rewrites `/about` → `about.html`, `/de/about` → `de/about.html`, mirroring production `.htaccess` behaviour. Use it whenever testing navigation links.
 
 ## Site Structure
 
@@ -24,12 +25,18 @@ Open any `.html` file directly in a browser — no server required, but a server
 | `testimonials.html` | Client testimonials |
 | `media.html` | Press/media coverage |
 | `contact.html` | Consultation booking form |
+| `privacy.html` | Privacy policy |
+| `404.html` | Custom 404 page |
 | `shared.css` | All shared styles (design tokens, nav, buttons, footer, responsive) |
 | `shared.js` | All shared interactive behaviour (see JS Patterns below) |
 
 Each page imports `shared.css` + `shared.js` and adds its own `<style>` block for page-specific layout.
 
+**German locale** — `de/` mirrors the same page set (`index.html`, `about.html`, …, `privacy.html`) for German-language visitors. Structure and component patterns are identical; nav links point back to the same `de/` pages.
+
 **Archive/draft files** — not linked from the nav, do not edit: `index-7.html`, `vastu-riyaz.html`, `vasturiyaznadaf.html`.
+
+**Backup snapshots** — `_backup-*` directories are point-in-time snapshots; ignore them.
 
 ## Design System (shared.css)
 
@@ -71,7 +78,7 @@ All interactive behaviour is in `shared.js` (no framework, plain ES5-style IIFE)
 
 ## Images
 
-Hero image: `hero Banner.png` (space in filename). Referenced in CSS as `"hero%20Banner.png"`. Other images are in subdirectories: `Archives/`, `Articles/`, `Awards/`, `Testimonials/`.
+Hero image: `hero Banner.jpg` (space in filename — `.jpg`, not `.png`). Referenced everywhere as `"hero%20Banner.jpg"`. Other images are in subdirectories: `Archives/`, `Articles/`, `Awards/`, `Testimonials/`.
 
 Awards marquee uses `Awards/awards1.jpg`–`Awards/awards15.jpg` (15 images, doubled in JS to create infinite scroll). `awards9_orig.jpg` is an uncompressed backup — do not add it to the marquee.
 
@@ -80,6 +87,10 @@ Design reference images in the root (`Hero banner design.png`, `Home page fesign
 ## Contact Form
 
 `contact.html` posts to **formsubmit.co** (action `https://formsubmit.co/rznadaf@gmail.com`). No server-side code. The form is static; submissions go directly to that email address.
+
+## Fonts
+
+All three typefaces are self-hosted in `fonts/` as `.woff2` files — no Google Fonts CDN call at runtime. Files follow the pattern `{family}-{weight}[-ext].woff2` (e.g. `cinzel-600.woff2`, `cormorant-400i.woff2`, `jost-500.woff2`). `@font-face` declarations live in `shared.css`. Do not add new font families without adding corresponding files to `fonts/`.
 
 ## SEO / Static Assets
 

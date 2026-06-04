@@ -7,6 +7,9 @@
 <meta name="description" content="Schedule your Vastu consultation with Riyaz Nadaf — residential, commercial, industrial and online. Serving homeowners and businesses across India and globally for 40+ years.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://vasturiyaz.com/contact">
+<link rel="alternate" hreflang="en" href="https://vasturiyaz.com/contact">
+<link rel="alternate" hreflang="de" href="https://vasturiyaz.com/de/contact">
+<link rel="alternate" hreflang="x-default" href="https://vasturiyaz.com/contact">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vastu Riyaz Nadaf">
 <meta property="og:title" content="Contact — Vastu Riyaz Nadaf">
@@ -37,8 +40,8 @@
   pointer-events: none; z-index: 0;
 }
 .c-info > * { position: relative; z-index: 1; }
-.c-info .tag { color: rgba(139,105,20,.7); }
-.c-info .tag::before,.c-info .tag::after { background: rgba(139,105,20,.5); }
+.c-info .tag { color: var(--g3); }
+.c-info .tag::before,.c-info .tag::after { background: var(--g3); }
 .c-info .h-title { color: var(--gp); font-size: clamp(30px,3.8vw,48px); line-height: 1.1; }
 .c-info .h-lead { color: rgba(220,200,165,.97); margin-bottom: 40px; }
 
@@ -47,7 +50,7 @@
 .c-why-item { display: flex; gap: 14px; align-items: flex-start; }
 .c-why-dot { width: 6px; height: 6px; background: var(--g); border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
 .c-why-text { font-family: var(--serif); font-size: 16px; color: rgba(220,200,165,.94); line-height: 1.75; font-weight: 400; }
-.c-why-text strong { font-family: var(--cap); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--g3); display: block; margin-bottom: 2px; }
+.c-why-text strong { font-family: var(--cap); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--g3); display: block; margin-bottom: 2px; }
 .c-items { display: flex; flex-direction: column; gap: 24px; }
 .c-item { display: flex; gap: 16px; align-items: flex-start; }
 .c-icon {
@@ -56,17 +59,17 @@
   display: flex; align-items: center; justify-content: center;
 }
 .c-icon svg { width: 18px; height: 18px; stroke: var(--g3); fill: none; stroke-width: 1.4; }
-.c-label { font-family: var(--cap); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--g2); margin-bottom: 4px; }
+.c-label { font-family: var(--cap); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--g3); margin-bottom: 4px; }
 .c-val { font-family: var(--serif); font-size: 15px; color: rgba(210,190,158,.88); font-weight: 400; line-height: 1.5; }
 .c-val a { color: inherit; text-decoration: none; transition: color .3s; }
 .c-val a:hover { color: var(--g3); }
 .socials { display: flex; gap: 10px; margin-top: 40px; }
 .soc-btn {
   width: 40px; height: 40px; flex-shrink: 0;
-  border: 1px solid rgba(139,105,20,.2);
+  border: 1px solid rgba(139,105,20,.3);
   display: flex; align-items: center; justify-content: center;
-  color: rgba(122,106,84,.65); text-decoration: none;
-  font-family: var(--cap); font-size: 9px; letter-spacing: .06em;
+  color: rgba(185,160,110,.8); text-decoration: none;
+  font-family: var(--cap); font-size: 10px; letter-spacing: .06em;
   transition: all .35s;
 }
 .soc-btn:hover { border-color: var(--g2); color: var(--g3); background: rgba(139,105,20,.08); }
@@ -74,10 +77,10 @@
 /* Service pills */
 .service-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
 .svc-pill {
-  font-family: var(--cap); font-size: 8.5px; letter-spacing: .14em;
+  font-family: var(--cap); font-size: 10px; letter-spacing: .12em;
   text-transform: uppercase; padding: 7px 13px;
-  border: 1px solid rgba(139,105,20,.18);
-  color: rgba(122,106,84,.65); cursor: default;
+  border: 1px solid rgba(139,105,20,.28);
+  color: rgba(185,160,110,.8); cursor: default;
   transition: border-color .3s, color .3s;
 }
 .svc-pill:hover { border-color: rgba(139,105,20,.42); color: var(--g3); }
@@ -103,7 +106,7 @@
 
 .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
 .f-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
-.f-group label { font-family: var(--cap); font-size: 8.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
+.f-group label { font-family: var(--cap); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
 .f-group input,.f-group select,.f-group textarea {
   background: var(--bg); border: 1px solid rgba(139,105,20,.18);
   padding: 14px 16px; font-family: var(--serif); font-size: 15px;
@@ -145,9 +148,9 @@
 }
 .trust-item {
   display: flex; align-items: center; gap: 8px;
-  font-family: var(--cap); font-size: 8px;
-  letter-spacing: .14em; text-transform: uppercase;
-  color: var(--lite);
+  font-family: var(--cap); font-size: 10px;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(185,160,110,.82);
 }
 .trust-item::before {
   content: '';
@@ -174,10 +177,10 @@
 @media(max-width:560px){
   .c-info { padding: 44px 5%; }
   .service-pills { gap: 6px; }
-  .svc-pill { font-size: 8px; padding: 7px 11px; }
+  .svc-pill { font-size: 9.5px; padding: 7px 11px; }
   .f-group input, .f-group select, .f-group textarea { padding: 12px 14px; font-size: 15px; }
   .f-submit { font-size: 10px; letter-spacing: .16em; padding: 15px; }
-  .trust-item { font-size: 7.5px; }
+  .trust-item { font-size: 9.5px; }
 }
 </style>
 </head>
@@ -258,7 +261,7 @@
         </div>
         <div>
           <div class="c-label">Location</div>
-          <div class="c-val">Pune, Maharashtra, India<br><span style="font-size:13px;color:rgba(122,106,84,.6)">Online consultations available worldwide</span></div>
+          <div class="c-val">Pune, Maharashtra, India<br><span style="font-size:13px;color:rgba(185,160,110,.75)">Online consultations available worldwide</span></div>
         </div>
       </div>
       <div class="c-item">
@@ -267,7 +270,7 @@
         </div>
         <div>
           <div class="c-label">Phone &amp; WhatsApp</div>
-          <div class="c-val"><a href="tel:+918806878699">+91 88068 78699</a><br><span style="font-size:13px;color:rgba(122,106,84,.6)">Call or WhatsApp anytime</span></div>
+          <div class="c-val"><a href="tel:+918806878699">+91 88068 78699</a><br><span style="font-size:13px;color:rgba(185,160,110,.75)">Call or WhatsApp anytime</span></div>
         </div>
       </div>
       <div class="c-item">
@@ -316,6 +319,7 @@
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="https://vasturiyaz.com/contact?sent=1">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="f-row">
         <div class="f-group">
           <label for="fn">First Name</label>
