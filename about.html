@@ -26,15 +26,28 @@
 }
 .about-photo-col {
   position: relative; background: var(--dark2);
-  aspect-ratio: 3 / 2; overflow: hidden;
+  overflow: hidden;
 }
-.about-photo-col img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center top;
+.about-photo-col > img {
+  width: 100%; height: auto; display: block;
+  object-fit: cover; aspect-ratio: 3/2;
   transition: transform .75s ease;
 }
-.about-photo-col:hover img { transform: scale(1.025); }
+.about-photo-col:hover > img { transform: scale(1.025); }
+/* Highlights moved into photo col — dark background variant */
+.about-photo-col .about-highlights {
+  background: var(--dark2);
+  border-top: 1px solid rgba(139,105,20,.15);
+}
+.about-photo-col .ah-item {
+  background: transparent;
+  border-top: 1px solid rgba(139,105,20,.08);
+}
+.about-photo-col .ah-item:first-child { border-top: none; }
+.about-photo-col .ah-item:hover { background: rgba(139,105,20,.06); border-top-color: var(--g); }
+.about-photo-col .ah-n { color: var(--g3); }
+.about-photo-col .ah-l { color: var(--gp); }
+.about-photo-col .ah-d { color: rgba(190,168,128,.65); }
 .about-photo-decor {
   position: absolute; top: 40px; right: 0; z-index: 2;
   width: 3px; height: 140px; background: var(--g);
@@ -311,10 +324,27 @@
   <div class="about-photo-col r">
     <div class="about-photo-decor"></div>
     <img src="Awards/awards10.jpg" alt="Riyaz Nadaf — Vastu consultant" loading="lazy">
-    <div class="about-photo-quote">
-      <div class="apq-mark">"</div>
-      <p class="apq-text">Good Vastu is not just about directions — it's about creating a life of balance, happiness and growth. When a space is aligned, everything else follows.</p>
-      <cite class="apq-cite">— Riyaz Nadaf</cite>
+    <div class="about-highlights">
+      <div class="ah-item">
+        <div class="ah-n">40+</div>
+        <div class="ah-l">Years Experience</div>
+        <div class="ah-d">Decades of trusted practice</div>
+      </div>
+      <div class="ah-item">
+        <div class="ah-n">30 Lakh+</div>
+        <div class="ah-l">Properties Healed</div>
+        <div class="ah-d">Residential &amp; commercial</div>
+      </div>
+      <div class="ah-item">
+        <div class="ah-n">Global</div>
+        <div class="ah-l">Clientele</div>
+        <div class="ah-d">India, Germany, USA &amp; more</div>
+      </div>
+      <div class="ah-item">
+        <div class="ah-n">Multi</div>
+        <div class="ah-l">Award Winner</div>
+        <div class="ah-d">Business Titans &amp; more</div>
+      </div>
     </div>
   </div>
   <div class="about-body r d1">
@@ -329,28 +359,6 @@
     <div class="pull-q" style="margin-bottom:28px">
       <p>When a space is truly aligned, everything else follows — health, prosperity, relationships and peace of mind all come into harmony.</p>
       <cite>— Riyaz Nadaf, Four Decades of Practice</cite>
-    </div>
-    <div class="about-highlights">
-      <div class="ah-item">
-        <div class="ah-n">40+</div>
-        <div class="ah-l">Years Experience</div>
-        <div class="ah-d">Decades of trusted practice</div>
-      </div>
-      <div class="ah-item">
-        <div class="ah-n">500+</div>
-        <div class="ah-l">Properties Healed</div>
-        <div class="ah-d">Residential &amp; commercial</div>
-      </div>
-      <div class="ah-item">
-        <div class="ah-n">Global</div>
-        <div class="ah-l">Clientele</div>
-        <div class="ah-d">India, Germany, USA &amp; more</div>
-      </div>
-      <div class="ah-item">
-        <div class="ah-n">Multi</div>
-        <div class="ah-l">Award Winner</div>
-        <div class="ah-d">Business Titans &amp; more</div>
-      </div>
     </div>
     <a href="/contact" class="btn-dk">Book a Consultation →</a>
   </div>
