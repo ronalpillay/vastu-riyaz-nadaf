@@ -964,8 +964,8 @@
       <p class="h-lead">Watch how four decades of expertise transforms spaces and lives — a glimpse into the work of India's trusted Vastu consultant.</p>
     </div>
     <div class="vid-wrap">
-      <video id="vastuVid" preload="none" controls playsinline poster="hero%20Banner.jpg">
-        <source src="Vastu riyaz vid.MP4" type="video/mp4">
+      <video id="vastuVid" preload="none" playsinline webkit-playsinline poster="hero%20Banner.jpg">
+        <source src="Vastu%20riyaz%20vid.MP4" type="video/mp4">
       </video>
       <div class="vid-play-btn" id="vidPlayBtn" aria-label="Play video">
         <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M8 5v14l11-7z"/></svg>
@@ -1213,10 +1213,16 @@
   if(!btn || !vid) return;
   btn.addEventListener('click', function(){
     btn.classList.add('hidden');
-    vid.play();
+    var p = vid.play();
+    if(p !== undefined) {
+      p.catch(function(){ btn.classList.remove('hidden'); });
+    }
   });
-  vid.addEventListener('pause', function(){ btn.classList.remove('hidden'); });
-  vid.addEventListener('ended', function(){ btn.classList.remove('hidden'); });
+  vid.addEventListener('pause', function(){ if(!vid.seeking) btn.classList.remove('hidden'); });
+  vid.addEventListener('ended', function(){ btn.classList.remove('hidden'); vid.currentTime = 0; });
+  // Show native controls after play starts (better for mobile)
+  vid.addEventListener('play', function(){ vid.controls = true; });
+  vid.addEventListener('pause', function(){ if(vid.currentTime === 0) vid.controls = false; });
 })();
 </script>
 <script src="shared.js" defer></script>
