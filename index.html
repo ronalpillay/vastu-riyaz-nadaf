@@ -332,6 +332,45 @@
 .ab-l { font-family: var(--cap); font-size: 8.5px; letter-spacing: .14em; color: rgba(26,18,8,.75); text-transform: uppercase; margin-top: 4px; }
 .about-rule { position: absolute; top: 40px; right: 0; width: 3px; height: 140px; background: linear-gradient(to bottom, var(--g3), var(--g)); }
 
+/* ── VIDEO SECTION ────────────────────────────────────── */
+.vid-sec {
+  background: var(--dark); padding: clamp(64px,8vw,108px) 5%;
+  border-top: 1px solid rgba(139,105,20,.1);
+}
+.vid-sec .tag { color: rgba(139,105,20,.7); }
+.vid-sec .tag::before,.vid-sec .tag::after { background: rgba(139,105,20,.5); }
+.vid-sec .h-title { color: var(--gp); }
+.vid-sec .h-lead { color: rgba(190,168,128,.85); }
+.vid-inner {
+  display: grid; grid-template-columns: 1fr 1.6fr;
+  gap: clamp(32px,5vw,72px); align-items: center;
+  max-width: 1200px; margin: 0 auto;
+}
+.vid-wrap {
+  position: relative; border-radius: 4px; overflow: hidden;
+  background: var(--dark2);
+  box-shadow: 0 24px 80px rgba(0,0,0,.5);
+}
+.vid-wrap video { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+.vid-play-btn {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: rgba(10,6,2,.35); cursor: pointer; transition: background .3s;
+}
+.vid-play-btn:hover { background: rgba(10,6,2,.18); }
+.vid-play-btn svg {
+  width: 72px; height: 72px;
+  background: rgba(139,105,20,.85); border-radius: 50%;
+  padding: 16px; color: var(--dark);
+  transition: transform .3s, background .3s;
+}
+.vid-play-btn:hover svg { transform: scale(1.08); background: var(--g2); }
+.vid-play-btn.hidden { display: none; }
+@media(max-width:900px) {
+  .vid-inner { grid-template-columns: 1fr; }
+  .vid-label { text-align: center; }
+  .vid-label .tag { justify-content: center; }
+}
+
 /* ── SERVICES (editorial list) ────────────────────────── */
 .svc-sec {
   background: var(--dark2);
@@ -724,6 +763,7 @@
 <div id="mMenu">
   <div class="mm-top">
     <span class="mm-brand">VASTU <em>RIYAZ NADAF</em></span>
+    <div class="mm-lang-sw"><a href="/" class="lang-btn act">EN</a><span class="lang-sw-sep">|</span><a href="/de/" class="lang-btn">DE</a></div>
     <button id="mm-close" aria-label="Close menu">&#x2212;</button>
   </div>
   <nav class="mm-links">
@@ -742,12 +782,7 @@
       <a href="tel:+918806878699">+91 88068 78699</a>
       <a href="mailto:rznadaf@gmail.com">Email Us</a>
     </div>
-    <div class="mm-lang-sw">
-      <a href="/" class="lang-btn act">EN</a>
-      <span class="lang-sw-sep">|</span>
-      <a href="/de/" class="lang-btn">DE</a>
     </div>
-  </div>
 </div>
 
 <!-- ═══ HERO ══════════════════════════════════════════════════ -->
@@ -826,7 +861,7 @@
     <div class="stat-d">Four decades of trusted practice</div>
   </div>
   <div class="stat-i">
-    <div class="stat-n" data-count="500" data-suffix="+">500+</div>
+    <div class="stat-n">30 Lakh+</div>
     <div class="stat-l">Properties Healed</div>
     <div class="stat-d">Residential &amp; commercial spaces</div>
   </div>
@@ -906,6 +941,25 @@
     <div class="about-badge">
       <span class="ab-n">40+</span>
       <span class="ab-l">Years of Expertise</span>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="vid-sec">
+  <div class="vid-inner r">
+    <div class="vid-label">
+      <div class="tag">In Practice</div>
+      <h2 class="h-title">Vastu Shastra <em>in Action</em></h2>
+      <p class="h-lead">Watch how four decades of expertise transforms spaces and lives — a glimpse into the work of India's trusted Vastu consultant.</p>
+    </div>
+    <div class="vid-wrap">
+      <video id="vastuVid" preload="none" controls playsinline poster="hero%20Banner.jpg">
+        <source src="Vastu riyaz vid.MP4" type="video/mp4">
+      </video>
+      <div class="vid-play-btn" id="vidPlayBtn" aria-label="Play video">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M8 5v14l11-7z"/></svg>
+      </div>
     </div>
   </div>
 </section>
@@ -1140,6 +1194,19 @@
       if(!isOpen){ item.classList.add('open'); this.setAttribute('aria-expanded','true'); }
     });
   });
+})();
+</script>
+<script>
+(function(){
+  var btn = document.getElementById('vidPlayBtn');
+  var vid = document.getElementById('vastuVid');
+  if(!btn || !vid) return;
+  btn.addEventListener('click', function(){
+    btn.classList.add('hidden');
+    vid.play();
+  });
+  vid.addEventListener('pause', function(){ btn.classList.remove('hidden'); });
+  vid.addEventListener('ended', function(){ btn.classList.remove('hidden'); });
 })();
 </script>
 <script src="shared.js" defer></script>

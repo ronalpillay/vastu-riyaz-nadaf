@@ -253,9 +253,9 @@
   --bg-mid:   #E4D8C8;
   --dark:     #1A1208;
   --dark2:    #251808;
-  --brown:    #4A3520;
-  --muted:    #7A6A54;
-  --lite:     #A89878;
+  --brown:    #3A2810;
+  --muted:    #5C4A34;
+  --lite:     #8A7458;
   /* Antique brass — muted, aged, NOT bright yellow */
   --g:        #8B6914;
   --g2:       #A07B22;
@@ -853,8 +853,10 @@ footer::before {
 #navbar.home-pg .lang-btn:hover { color: var(--gp); }
 #navbar.home-pg.scrolled .lang-btn { color: var(--muted); }
 #navbar.home-pg.scrolled .lang-btn.act { color: var(--g); }
-.mm-lang-sw { display: flex; align-items: center; gap: 4px; margin-top: 18px; }
-.mm-lang-sw .lang-btn { font-size: 10px; padding: 4px 8px; }
+.mm-lang-sw { display: flex; align-items: center; gap: 4px; margin: 0 auto 0 16px; }
+.mm-lang-sw .lang-btn { font-size: 10px; padding: 5px 10px; color: rgba(226,207,160,.5); }
+.mm-lang-sw .lang-btn.act { color: var(--g3); }
+.mm-lang-sw .lang-sw-sep { color: rgba(139,105,20,.4); }
 
 /* ── WHATSAPP FLOAT ──────────────────────────────────────── */
 .wa-float {
