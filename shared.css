@@ -860,7 +860,7 @@ footer::before {
 
 /* ── WHATSAPP FLOAT ──────────────────────────────────────── */
 .wa-float {
-  position: fixed; bottom: 28px; right: 28px; z-index: 9000;
+  position: fixed; bottom: 28px; left: 28px; z-index: 9000;
   width: 56px; height: 56px; border-radius: 50%;
   background: #25D366; color: #fff;
   display: flex; align-items: center; justify-content: center;
@@ -961,7 +961,7 @@ footer::before {
   .gdpr-banner { padding: 16px 5%; }
   .gdpr-acts { width: 100%; justify-content: flex-end; }
   /* WhatsApp button slightly smaller */
-  .wa-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+  .wa-float { width: 50px; height: 50px; bottom: 20px; left: 20px; }
   .wa-float svg { width: 22px; height: 22px; }
   /* Footer connect column wraps */
   .ft-col ul { columns: 2; gap: 8px; }
