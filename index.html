@@ -250,51 +250,76 @@
   font-style: italic; position: relative; z-index: 1;
 }
 
-/* ── MANIFESTO ────────────────────────────────────────── */
-.manifesto {
-  background: var(--bg);
-  padding: clamp(72px,9vw,120px) 5%;
-  position: relative; overflow: hidden;
+/* ── FORBES FEATURE ───────────────────────────────────── */
+.forbes-sec {
+  background: var(--bg-warm);
+  padding: clamp(64px,8vw,108px) 5%;
   border-bottom: 1px solid var(--rule);
+  position: relative; overflow: hidden;
 }
-.manifesto::before {
+.forbes-sec::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 30% 50%, rgba(139,105,20,.05) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 70% 50%, rgba(139,105,20,.04) 0%, transparent 55%);
   pointer-events: none;
 }
-.manifesto-inner {
-  display: flex; align-items: center;
-  gap: clamp(16px, 4vw, 64px);
+.forbes-inner {
+  display: grid; grid-template-columns: 1fr 1.15fr;
+  gap: clamp(40px,5vw,72px); align-items: center;
   max-width: 1100px; margin: 0 auto;
   position: relative; z-index: 1;
 }
-.manifesto-num {
-  font-family: var(--cap);
-  font-size: clamp(110px, 17vw, 230px);
-  font-weight: 700; color: var(--g);
-  opacity: .08; line-height: .9;
-  flex-shrink: 0; user-select: none;
-  letter-spacing: -.04em;
-  transition: opacity .6s;
+.forbes-badge-col { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+.forbes-badge {
+  display: inline-flex; flex-direction: column;
+  margin-bottom: 24px;
 }
-.manifesto:hover .manifesto-num { opacity: .12; }
-.manifesto-body { flex: 1; }
-.manifesto-text {
-  font-family: var(--serif);
-  font-size: clamp(21px, 2.5vw, 36px);
-  font-style: italic; font-weight: 400;
-  color: var(--dark); line-height: 1.55;
-  margin-bottom: 28px; letter-spacing: -.012em;
+.forbes-logo {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px,4vw,48px); font-weight: 700;
+  color: #c8102e; letter-spacing: -.03em; line-height: 1;
 }
-.manifesto-text::before { content: '\201C'; color: var(--g); margin-right: 2px; }
-.manifesto-text::after  { content: '\201D'; color: var(--g); margin-left: 2px; }
-.manifesto-attr {
-  display: flex; align-items: center; gap: 14px;
+.forbes-pub-sub {
   font-family: var(--cap); font-size: 11px;
-  letter-spacing: .22em; text-transform: uppercase; color: var(--lite);
+  letter-spacing: .28em; text-transform: uppercase;
+  color: var(--muted); margin-top: 5px;
 }
-.manifesto-rule { display: block; width: 36px; height: 1px; background: var(--g); opacity: .45; }
+.forbes-divider {
+  width: 40px; height: 1px;
+  background: var(--g); margin: 0 0 28px;
+}
+.forbes-headline {
+  font-family: var(--serif);
+  font-size: clamp(22px,2.6vw,34px);
+  font-weight: 300; line-height: 1.35;
+  color: var(--dark); letter-spacing: -.02em;
+  margin-bottom: 20px;
+}
+.forbes-headline em { font-style: italic; color: var(--g2); }
+.forbes-excerpt {
+  font-family: var(--serif); font-size: 17px;
+  line-height: 1.9; color: var(--brown);
+  font-weight: 400; margin-bottom: 32px; max-width: 480px;
+}
+.forbes-img-col {
+  position: relative; overflow: hidden;
+  background: transparent;
+}
+.forbes-img-col img {
+  width: 100%; display: block;
+  mix-blend-mode: multiply;
+  filter: contrast(1.08) saturate(1.05);
+  transition: transform .75s ease;
+}
+.forbes-img-col:hover img { transform: scale(1.025); }
+@media(max-width:900px){
+  .forbes-inner { grid-template-columns: 1fr; gap: 40px; }
+  .forbes-img-col { order: -1; }
+  .forbes-excerpt { max-width: 100%; font-size: 16px; }
+}
+@media(max-width:560px){
+  .forbes-headline { font-size: 22px; }
+}
 
 /* ── ABOUT TEASER ─────────────────────────────────────── */
 .about-sec { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; }
@@ -603,12 +628,6 @@
   .hero-btns { gap: 10px; }
   /* Compass — smaller and more transparent on tablet */
   .hero-compass svg { width: min(36vmin, 320px); opacity: .07; }
-  /* Manifesto: restore centered on tablet/mobile */
-  .manifesto { text-align: center; }
-  .manifesto-inner { flex-direction: column; align-items: center; gap: 0; }
-  .manifesto-num { display: none; }
-  .manifesto-text { font-size: clamp(19px, 3.5vw, 28px); }
-  .manifesto-attr { justify-content: center; }
   /* Stats */
   .stats-strip { grid-template-columns: 1fr 1fr; }
   .stat-i { padding: 32px 5% 28px; }
@@ -648,7 +667,6 @@
   .svc-row { grid-template-columns: 48px 1fr; gap: 0 14px; padding: 20px 0 20px 14px; }
   .sr-n { font-size: 36px; }
   .sr-desc { font-size: 14px; }
-  .manifesto { padding: 60px 5%; }
   .test-bg-q { font-size: clamp(160px, 40vw, 280px); }
   .ts { padding: 28px 20px; }
   .ts-q { font-size: 15px; }
@@ -902,17 +920,21 @@
   </div>
 </div>
 
-<!-- MANIFESTO -->
-<section class="manifesto r">
-  <div class="manifesto-inner">
-    <div class="manifesto-num" aria-hidden="true">40+</div>
-    <div class="manifesto-body">
-      <p class="manifesto-text">We believe your space holds the power to transform every aspect of your life — and Vastu Shastra, practiced with integrity and precision, is the key.</p>
-      <div class="manifesto-attr">
-        <span class="manifesto-rule"></span>
-        <span>Riyaz Nadaf · 40 Years of Practice</span>
-        <span class="manifesto-rule"></span>
+<!-- FORBES FEATURE -->
+<section class="forbes-sec r">
+  <div class="forbes-inner">
+    <div class="forbes-badge-col">
+      <div class="forbes-badge">
+        <span class="forbes-logo">Forbes</span>
+        <span class="forbes-pub-sub">India · Featured</span>
       </div>
+      <div class="forbes-divider"></div>
+      <h2 class="forbes-headline">Pioneering Vastu Shastra as a <em>Science of Harmonious &amp; Prosperous Living</em></h2>
+      <p class="forbes-excerpt">Beginning his journey at 26 under the guidance of renowned masters, Riyaz Nadaf devoted four decades to transforming public perception of Vastu Shastra into a respected modern discipline. With close to 3 million clients across India and abroad, he is recognised as one of the field's most trusted and influential voices.</p>
+      <a href="https://www.forbesindia.com/article/upfront/brand-connect/trendsetters-of-the-new-era/2994546/1" class="btn-dk" target="_blank" rel="noopener">Read the Forbes Feature →</a>
+    </div>
+    <div class="forbes-img-col">
+      <img src="Articles/forbes-feature.png" alt="Riyaz Nadaf featured in Forbes India — Trendsetters of the New Era" loading="lazy">
     </div>
   </div>
 </section>
