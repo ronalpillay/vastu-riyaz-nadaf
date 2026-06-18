@@ -102,14 +102,18 @@
   top: 50%; right: 5%;
   transform: translateY(-52%);
   pointer-events: none; z-index: 1;
+  perspective: 640px;
 }
 .hero-compass svg {
   width: min(48vmin, 480px);
-  opacity: .13;
-  animation: hspin 100s linear infinite;
-  filter: drop-shadow(0 0 28px rgba(139,105,20,.22));
+  opacity: .17;
+  animation: hspin3d 80s linear infinite;
+  filter: drop-shadow(0 0 40px rgba(139,105,20,.32));
 }
-@keyframes hspin { to { transform: rotate(360deg); } }
+@keyframes hspin3d {
+  0%   { transform: rotateX(26deg) rotateZ(0deg); }
+  100% { transform: rotateX(26deg) rotateZ(360deg); }
+}
 
 .hero-content {
   position: relative; z-index: 2;
@@ -264,7 +268,7 @@
   pointer-events: none;
 }
 .forbes-inner {
-  display: grid; grid-template-columns: 1fr 1.15fr;
+  display: grid; grid-template-columns: 1.2fr 1fr;
   gap: clamp(40px,5vw,72px); align-items: center;
   max-width: 1100px; margin: 0 auto;
   position: relative; z-index: 1;
@@ -297,13 +301,15 @@
 }
 .forbes-headline em { font-style: italic; color: var(--g2); }
 .forbes-excerpt {
-  font-family: var(--serif); font-size: 17px;
-  line-height: 1.9; color: var(--brown);
-  font-weight: 400; margin-bottom: 32px; max-width: 480px;
+  font-family: var(--serif); font-size: 15.5px;
+  line-height: 1.88; color: var(--brown);
+  font-weight: 400; margin-bottom: 16px; max-width: 520px;
 }
+.forbes-excerpt:last-of-type { margin-bottom: 32px; }
 .forbes-img-col {
   position: relative; overflow: hidden;
   background: transparent;
+  max-width: 420px; margin-left: auto;
 }
 .forbes-img-col img {
   width: 100%; display: block;
@@ -314,7 +320,7 @@
 .forbes-img-col:hover img { transform: scale(1.025); }
 @media(max-width:900px){
   .forbes-inner { grid-template-columns: 1fr; gap: 40px; }
-  .forbes-img-col { order: -1; }
+  .forbes-img-col { order: -1; margin: 0 auto; }
   .forbes-excerpt { max-width: 100%; font-size: 16px; }
 }
 @media(max-width:560px){
@@ -627,7 +633,7 @@
   .hero-desc { font-size: 15.5px; }
   .hero-btns { gap: 10px; }
   /* Compass — smaller and more transparent on tablet */
-  .hero-compass svg { width: min(36vmin, 320px); opacity: .07; }
+  .hero-compass svg { width: min(36vmin, 320px); opacity: .09; }
   /* Stats */
   .stats-strip { grid-template-columns: 1fr 1fr; }
   .stat-i { padding: 32px 5% 28px; }
@@ -929,12 +935,14 @@
         <span class="forbes-pub-sub">India · Featured</span>
       </div>
       <div class="forbes-divider"></div>
-      <h2 class="forbes-headline">Pioneering Vastu Shastra as a <em>Science of Harmonious &amp; Prosperous Living</em></h2>
-      <p class="forbes-excerpt">Beginning his journey at 26 under the guidance of renowned masters, Riyaz Nadaf devoted four decades to transforming public perception of Vastu Shastra into a respected modern discipline. With close to 3 million clients across India and abroad, he is recognised as one of the field's most trusted and influential voices.</p>
+      <h2 class="forbes-headline">Pioneering Vastushastra as a <em>Science of Harmonious &amp; Prosperous Living</em></h2>
+      <p class="forbes-excerpt">Riyaz Nadaf emerged as one of the early pioneers in promoting Vastushastra as a practical science of balanced living and architectural harmony. Beginning his journey at the age of 26, he devoted years to studying traditional Vastu principles under the guidance of renowned experts and soon became a trusted consultant with thousands of clients across India and abroad.</p>
+      <p class="forbes-excerpt">Through his consultations, he emphasized the importance of directional planning, room placement, and structural alignment in enhancing peace of mind, healthy life, prosperity, and well-being. His work extended beyond homes to large construction projects, where he advocated Vastu-compliant design for better outcomes.</p>
+      <p class="forbes-excerpt">Known for combining traditional wisdom with practical application, he earned recognition for transforming public perception of Vastushastra into a respected and influential discipline in modern living. With 40 years of rock solid experience and close to 3 million clients, he is a force to reckon with in Vastu Shastra.</p>
       <a href="https://www.forbesindia.com/article/upfront/brand-connect/trendsetters-of-the-new-era/2994546/1" class="btn-dk" target="_blank" rel="noopener">Read the Forbes Feature →</a>
     </div>
     <div class="forbes-img-col">
-      <img src="Articles/forbes-feature.png" alt="Riyaz Nadaf featured in Forbes India — Trendsetters of the New Era" loading="lazy">
+      <img src="forbes1.1.png" alt="Riyaz Nadaf featured in Forbes India — Trendsetters of the New Era" loading="lazy">
     </div>
   </div>
 </section>
