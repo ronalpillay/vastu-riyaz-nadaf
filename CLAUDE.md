@@ -15,6 +15,12 @@ python3 -m http.server 8080   # fallback — clean URLs (/about) won't resolve
 
 `serve.py` rewrites `/about` → `about.html`, `/de/about` → `de/about.html`, mirroring production `.htaccess` behaviour. Use it whenever testing navigation links.
 
+`.htaccess` does four things beyond URL rewriting: enforces HTTPS (`RewriteRule ^ https://…`), sets canonical URLs by stripping `.html` extensions via 301 redirects, blocks direct access to `_backup*`, `serve.py`, `.claude`, `CLAUDE.md`, and the archive/draft HTML files (403), and injects security headers (`HSTS`, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, `X-XSS-Protection`).
+
+## Deployment
+
+Live at **vasturiyaz.com**, hosted via cPanel. `.cpanel.yml` defines the deploy task (`cp -R . $DEPLOYPATH` into `/home1/scaleupglobal/vasturiyaz.com/`), which cPanel's Git Version Control feature runs when a deploy is triggered on the server side — **pushing to the `origin` GitHub remote alone does not update the live site**; a deploy must be triggered in cPanel (or the account must have auto-deploy enabled) after the push.
+
 ## Site Structure
 
 | File | Purpose |
@@ -32,7 +38,7 @@ python3 -m http.server 8080   # fallback — clean URLs (/about) won't resolve
 
 Each page imports `shared.css` + `shared.js` and adds its own `<style>` block for page-specific layout.
 
-**German locale** — `de/` mirrors the same page set (`index.html`, `about.html`, …, `privacy.html`) for German-language visitors. Structure and component patterns are identical; nav links point back to the same `de/` pages.
+**German locale** — `de/` mirrors the same page set (`index.html`, `about.html`, …, `privacy.html`) for German-language visitors. Structure and component patterns are identical; nav links point back to the same `de/` pages. All `de/` pages link to `../shared.css` and `../shared.js` (parent-relative paths) — there is no separate stylesheet for the German locale.
 
 **Archive/draft files** — not linked from the nav, do not edit: `index-7.html`, `vastu-riyaz.html`, `vasturiyaznadaf.html`.
 
@@ -80,9 +86,13 @@ All interactive behaviour is in `shared.js` (no framework, plain ES5-style IIFE)
 
 Hero image: `hero Banner.jpg` (space in filename — `.jpg`, not `.png`). Referenced everywhere as `"hero%20Banner.jpg"`. Other images are in subdirectories: `Archives/`, `Articles/`, `Awards/`, `Testimonials/`.
 
+`forbes1.1.png` — Forbes India feature image used in the `media.html` Forbes article section. Kept in the root alongside the hero image.
+
 Awards marquee uses `Awards/awards1.jpg`–`Awards/awards15.jpg` (15 images, doubled in JS to create infinite scroll). `awards9_orig.jpg` is an uncompressed backup — do not add it to the marquee.
 
 Design reference images in the root (`Hero banner design.png`, `Home page fesign.png`, `Sample design Vastu .png`) are client-supplied mockups for reference only — they are not served by the site.
+
+`Vastu riyaz vid.MP4` in the root is no longer referenced by any page (the homepage video was replaced by a YouTube embed) — leave it as-is unless asked to clean it up.
 
 ## Contact Form
 
@@ -96,7 +106,7 @@ All three typefaces are self-hosted in `fonts/` as `.woff2` files — no Google 
 
 - `favicon.svg` — inline SVG favicon
 - `robots.txt` — allows all crawlers
-- `sitemap.xml` — lists all six public pages
+- `sitemap.xml` — lists the six public English pages and their six `de/` counterparts (12 URLs); `privacy.html` and archive/draft files are excluded
 
 ## Conventions
 
